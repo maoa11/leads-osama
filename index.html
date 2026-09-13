@@ -1,0 +1,1822 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>خط المبيعات</title>
+<meta name="description" content="نظام متابعة مبيعات شخصي — أسامة · رام">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F3F1EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1412" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F1EC">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="المبيعات">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20aria-hidden%3D%22true%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22f%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2312715A%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230B4A3B%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22120%22%20fill%3D%22url(%23f)%22%2F%3E%3Crect%20x%3D%22112%22%20y%3D%22262%22%20width%3D%2272%22%20height%3D%22110%22%20rx%3D%2222%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22220%22%20y%3D%22202%22%20width%3D%2272%22%20height%3D%22170%22%20rx%3D%2222%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22328%22%20y%3D%22136%22%20width%3D%2272%22%20height%3D%22236%22%20rx%3D%2222%22%20fill%3D%22%23F2B84B%22%2F%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAF9ElEQVR42u3bzU9UZxSA8Xcvo+Be/wP3DfgtDswMM3zo8FX7YVGBYqkNYI0mik2VhCaaaCTBaAUcTRps1LgoQ01MRJPGFZIiO5NJuiCyMUTXNIZFu3gZrnfOfc915rl59of7nt/cuYvBbP6hncia4QhobRwn2omsmc0n2oisgYPAQeAgURzftxFZAwflw9FKZA0cBA7yg6O3lciaqehtJbIGDsqHo4XImqn4roXIGjgIHAQOksXRTGTNVBxvJrIGDgIHgYNEcfQ0E1kzFT1pImvgIHAQOEgUx7dpImvgoHw4DhJZAweBg/zg6D5IZA0cBA7yheMAkTVT3nWAyBo4CBwEDgIHucHR2URkDRwEDgJHyIudachf1cnGMOE41kRB1zLYMJ1JLk8lPDZ5Kxk706D+Z5vyY40UXFt7Gid//QgW/+/maHJrj+YfD45g++u3On8yVpvOJMFRnJ2/nCpExmrnL6fAUYRfKIXLWJ5K/PMoofXlYsqPNlIQ9Q2nRHAsTyWO/lyvcgvgCKqbo0kpHB++WZRwNFAQZW/XSeG4OZpUuQVwfAI4srfrwAGOsOE40kBBJIxD4xbAAQ5wgMMXjnoKImkcCrdgyjvqKYiEcWjcAjjAsTaOTR31FESyOFRuARzgAAc4/OD4JkVBJIxD4xbAAQ5wuMcxIYdjAhzgAId62waOjEw/nMu9XvFwzeVej0w/3DZwpCRxHE6VVEMP7q74uoYe3P2oQcI4NM7KbDqcLJ3uPHu8UsB159lj77OkcSgcVwnhaL9yYaXgq/3KBXAUYW/fvyscx9v37zzjSMjhSCjh+DpZCok8Nv57eHiYKIxD49BKBYfv91D7m2nJ4KgrhWYW5qRwzCzMeZkojUPh0MABDnCAww+Or+pKIWEcHiYK49A4NHCAAxzg8IUjUQpJ41h/ojQOhcymLxOlkDAODxOFcWgcGjjAAQ5wgCNEOMblcIyDAxxhw7Hxi3gpJIvDy0RZHCqHBg5whBjHls70qczozMJcbmkx/1ZyS4szC3OnMqNbOtMfjeOVHI5X4HBS9/VLPn6g9fb9u+7rl8BRzDi6Ry8V9HPfp3+CI2Ach+IqxS/8KPCLvcs/eRwnjMPDRGEcGjsyGw/FVFr3DcPLlVta9DhOGsf6E6VxKOxIB4fIY2P1avvw8ABHEeEY+j0jtaqRqfvgCAzH5zH3jfxxX25VL71MnHn10vHE7HhcDkdcZU06ONyvChzgAIcwjlr3Sa8qjBOlcSisCRzgyIOjvdZ9wqsK5URhHBprAgc4wOEex5gcjjE1HDXuk15VGCdK41BYk9nYVuM+4VWFcqIwDo01gQMc4ADHJ4NjXm5V8y/DOREc4ChuHK1R9wmvKpQThXForAkc4AAHOHzgiLRG3Se7qnBOlMWhsiZwgCMPjpao+4RXFcqJwjg01mQiLfvdJ72qME6UxqGwJnCAAxzg8IOjeb/7ZuZn5VY1G86J2bGYHI6Yypp0cFycnHC8qkcvnktNfPTiuWMcg0O14PBzXZycCOfEwaHaIsBR7b7Kk51i/yv7yznHEytPdnqZmO6PSuH4rCuqsiYdHJHmapGXgNybRe8Tc28WHU+cvyfwTpq9FdPakYmkq1WqHBD4KMcH+7xPjA/2OZ4Y7Y1KPDb2a+1IDUckXd11bbiQPXVdGw7/xI7TNYXI6Dhdo7ggTRyRdHXsXJ+Pp33uzWLb8FnHE2Pn+vxNTPdHfXy/zN+LR3ujuttRxrFa2/DZzJPs079n1y3zJOvj42t9hDie2HE6euNqbfZWbN1uXK1N90fDsBcTSe8jsmYiB/cRWQMHgYPAQaI4DuwlsgYOAgeBg8BBTnCUNe0lsmbKmvYQWQMHgYP84GjcQ2QNHAQO8oVjN5E1cFAeHA27iayBg8BB4CBZHLuIrJmy+l1E1sBB4CBwkCiO1C4ia6YstZPIGjgIHAQOEsWR3ElkzZQldxBZAwetjWNDcgeRNbOhbgeRNXAQOMgXju1E1sBBeXAkthNZAweBg8BBsjiqiKyZDfEqImvgoDX7F0wX2b1lY8dBAAAAAElFTkSuQmCC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&amp;display=swap">
+<style>
+:root{
+  --bg:#F3F1EC;--surface:#FFFFFF;--surface-2:#F8F6F1;--sunk:#ECE8E0;
+  --ink:#18201C;--ink-2:#55605A;--ink-3:#858F8A;--line:#E3DED3;--line-2:#CFC8BA;
+  --brand:#0E6B53;--brand-ink:#FFFFFF;--brand-soft:#E2F1EB;
+  --wa:#127A3E;--wa-soft:#E3F3E9;--wa-ink:#0E6533;
+  --red:#B42318;--red-soft:#FDECEA;--red-line:#F2B8B0;
+  --amber:#875A00;--amber-soft:#FFF3D6;--amber-line:#EDCB7A;
+  --blue:#1D4ED8;--blue-soft:#EBF1FE;--blue-line:#A9C0F5;
+  --orange-soft:#FFEFDF;--gold:#D9981A;
+  --st-new:#5B6670;--st-sent:#1D4ED8;--st-warm:#C2410C;--st-cold:#64748B;--st-won:#15803D;--st-lost:#9F1239;
+  --shadow:0 1px 2px rgba(24,32,28,.06),0 6px 18px rgba(24,32,28,.05);
+  --r:18px;--r-sm:12px;
+  --font:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI","Noto Sans Arabic","Geeza Pro",Tahoma,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0F1412;--surface:#171E1B;--surface-2:#1C2521;--sunk:#232D29;
+    --ink:#E8EEEA;--ink-2:#A6B2AC;--ink-3:#7A8680;--line:#28322E;--line-2:#3A4641;
+    --brand:#35A983;--brand-ink:#04110C;--brand-soft:#16302A;
+    --wa:#17843F;--wa-soft:#13301F;--wa-ink:#7FE0A6;
+    --red:#FF8F85;--red-soft:#3A1715;--red-line:#6E2C26;
+    --amber:#F3C766;--amber-soft:#342810;--amber-line:#66511F;
+    --blue:#9BBAFF;--blue-soft:#152240;--blue-line:#30497D;
+    --orange-soft:#3A2513;--gold:#F2B84B;
+    --st-new:#A6B2AC;--st-sent:#9BBAFF;--st-warm:#FDBA74;--st-cold:#94A3B8;--st-won:#74E3A2;--st-lost:#FDA4AF;
+    --shadow:0 1px 2px rgba(0,0,0,.45);
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-anchor:none}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.65 var(--font);overflow-x:hidden;overflow-anchor:none;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+svg{display:block}
+h1,h2,h3,h4,p{margin:0}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;padding:0;margin:-1px}
+.wrap{max-width:720px;margin:0 auto;padding:0 12px 110px;padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+
+/* الهيدر */
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.top-in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:8px 12px;min-height:60px}
+.brand{display:flex;align-items:center;gap:10px;flex:1;min-width:0;background:none;border:0;padding:0;text-align:right;cursor:pointer}
+.brand svg{width:38px;height:38px;border-radius:11px;flex:none}
+.brand b{display:block;font-size:17px;line-height:1.25}
+.brand small{display:block;font-size:12px;color:var(--ink-2);line-height:1.3}
+.icon-btn{position:relative;flex:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation}
+.icon-btn svg{width:22px;height:22px}
+.icon-btn[aria-expanded="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.badge{position:absolute;top:-5px;left:-5px;min-width:21px;height:21px;padding:0 5px;border-radius:11px;background:var(--red);color:#fff;font-size:12px;font-weight:700;line-height:21px;text-align:center;box-shadow:0 0 0 2px var(--bg)}
+
+/* أزرار */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 14px;border-radius:var(--r-sm);border:1px solid var(--line-2);background:var(--surface);font-size:14px;font-weight:500;line-height:1.3;text-decoration:none;text-align:center;cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.45;cursor:default}
+.btn-block{width:100%}
+.btn-primary{background:var(--brand);border-color:var(--brand);color:var(--brand-ink);font-weight:700}
+.btn-ghost{background:transparent}
+.btn-danger{color:var(--red)}
+.btn-wa{width:100%;min-height:52px;background:var(--wa);border-color:var(--wa);color:#fff;font-size:16px;font-weight:700}
+.btn-wa svg{width:21px;height:21px}
+.btn-wa-o{width:100%;background:var(--wa-soft);border-color:transparent;color:var(--wa-ink);font-weight:700}
+.btn.is-on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+
+/* الهدف والإحصائيات */
+.panelbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.goal{margin-top:12px;padding:14px 16px}
+.goal-row{display:flex;justify-content:space-between;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
+.goal-lbl{font-size:13px;color:var(--ink-2);font-weight:500}
+.goal-pct{font-size:15px;font-weight:700;color:var(--brand)}
+.goal-sum{font-size:24px;font-weight:700;line-height:1.3}
+.goal-of{font-size:13.5px;color:var(--ink-2)}
+.bar{height:10px;border-radius:6px;background:var(--sunk);overflow:hidden;margin:10px 0 8px}
+.bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(270deg,var(--brand),var(--gold));transition:width .5s ease}
+.goal-left{font-size:13.5px;color:var(--ink-2)}
+.goal-left b{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
+.stat{min-height:66px;padding:8px 4px;border-radius:14px;border:1px solid var(--line);background:var(--surface);box-shadow:inset 0 3px 0 var(--c,var(--line));cursor:pointer;text-align:center;touch-action:manipulation}
+.stat b{display:block;font-size:22px;line-height:1.2;font-weight:700}
+.stat span{display:block;font-size:12.5px;color:var(--ink-2)}
+.stat.is-on{border-color:var(--ink);box-shadow:inset 0 3px 0 var(--c,var(--line)),0 0 0 1px var(--ink)}
+.st-new{--c:var(--st-new)}.st-sent{--c:var(--st-sent)}.st-warm{--c:var(--st-warm)}.st-cold{--c:var(--st-cold)}.st-won{--c:var(--st-won)}.st-lost{--c:var(--st-lost)}
+
+/* التذكيرات */
+.rem{display:grid;gap:8px;margin-top:12px}
+.rem-group{border-radius:var(--r);border:1px solid var(--line);background:var(--surface);overflow:hidden}
+.rem-group>summary,.fold>summary,.log>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;-webkit-user-select:none;user-select:none}
+.rem-group>summary::-webkit-details-marker,.fold>summary::-webkit-details-marker,.log>summary::-webkit-details-marker{display:none}
+.rem-group>summary{min-height:48px;padding:6px 14px;font-weight:700;font-size:15px}
+.rem-group>summary::after,.fold>summary::after{content:"";width:8px;height:8px;margin-right:auto;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s;opacity:.7}
+.rem-group[open]>summary::after,.fold[open]>summary::after{transform:rotate(135deg)}
+.rem-count{min-width:24px;padding:0 7px;border-radius:12px;background:var(--surface);font-size:13px;line-height:22px;text-align:center}
+.rem-group.late{background:var(--red-soft);border-color:var(--red-line)}
+.rem-group.late>summary{color:var(--red)}
+.rem-group.today{background:var(--amber-soft);border-color:var(--amber-line)}
+.rem-group.today>summary{color:var(--amber)}
+.rem-group.week>summary{color:var(--blue)}
+.rem-group.week .rem-count{background:var(--blue-soft)}
+.rem-list{list-style:none;margin:0;padding:0 8px 8px}
+.rem-item{margin-top:6px;padding:6px 10px 10px;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+.rem-name{display:block;width:100%;min-height:44px;padding:6px 0;border:0;background:none;font-weight:700;font-size:15px;line-height:1.4;text-align:right;cursor:pointer;text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:5px;overflow-wrap:anywhere;word-wrap:break-word}
+.rem-meta{font-size:13px;color:var(--ink-2);line-height:1.5}
+.late .rem-meta b{color:var(--red)}
+.today .rem-meta b{color:var(--amber)}
+.rem-btns{display:flex;gap:6px;margin-top:8px}
+.rem-btns .btn{flex:1 1 0;min-width:0;padding:6px 4px;font-weight:700;font-size:15px}
+.rem-btns .btn-done{flex:1.4 1 0;color:var(--brand)}
+
+/* البحث والفلترة */
+.tools{display:flex;gap:8px;margin-top:16px}
+.search{position:relative;flex:1;min-width:0}
+.search svg{position:absolute;top:50%;right:12px;width:19px;height:19px;margin-top:-9.5px;color:var(--ink-3);pointer-events:none}
+.search input{width:100%;min-height:46px;padding:10px 40px 10px 12px;border-radius:var(--r-sm);border:1px solid var(--line-2);background:var(--surface);font-size:16px;-webkit-appearance:none;appearance:none}
+.sort select{height:46px;max-width:9.5em;padding:0 10px;border-radius:var(--r-sm);border:1px solid var(--line-2);background:var(--surface);font-size:14px}
+.chips{display:flex;gap:6px;margin:10px -12px 0;padding:0 12px 2px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 12px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);font-size:13.5px;font-weight:500;white-space:nowrap;cursor:pointer;touch-action:manipulation}
+.chip i{min-width:22px;padding:0 6px;border-radius:10px;background:var(--sunk);color:var(--ink-2);font-style:normal;font-size:12px;line-height:20px;text-align:center}
+.chip.is-on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip.is-on i{background:var(--bg);color:var(--ink)}
+
+/* الأقسام القابلة للطي والنماذج */
+.fold{margin-top:10px;border:1px dashed var(--line-2);border-radius:var(--r);background:var(--surface-2)}
+.fold>summary{min-height:50px;padding:6px 14px;font-weight:700}
+.adds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.adds>.fold{margin-top:0;min-width:0}
+.adds>.fold[open]{grid-column:1/-1}
+.adds>.fold>summary{padding:6px 12px;font-size:14px}
+.fold-body{padding:2px 14px 14px}
+.form{display:grid;gap:10px}
+.field{display:grid;gap:4px;min-width:0;font-size:13px;font-weight:500;color:var(--ink-2)}
+.field small{font-weight:400}
+.field input,.field select,.field textarea,.ta{display:block;width:100%;min-height:44px;padding:9px 11px;border-radius:10px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font-size:16px;font-weight:400;line-height:1.5}
+.field textarea,.ta{min-height:88px;resize:vertical;line-height:1.65}
+.field input[dir="ltr"]{text-align:right}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.form-row{display:flex;flex-wrap:wrap;gap:8px}
+.form-row .btn{flex:1 1 auto}
+.hint{margin-top:6px;font-size:13px;color:var(--ink-2)}
+.list-head{margin-top:16px;font-size:13px;color:var(--ink-3)}
+/* بطاقة العميل */
+.list{display:grid;gap:12px;margin-top:8px}
+.lead{position:relative;padding:14px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);box-shadow:inset 0 4px 0 var(--c,var(--line)),var(--shadow);transition:opacity .2s}
+.lead.is-cold{opacity:.62}
+.lead.is-lost{opacity:.5}
+.lead.is-cold:focus-within,.lead.is-lost:focus-within,.lead.flash{opacity:1}
+.lead.flash{animation:flash 1.8s ease-out}
+@keyframes flash{0%,35%{box-shadow:inset 0 4px 0 var(--c,var(--line)),0 0 0 4px var(--gold)}100%{box-shadow:inset 0 4px 0 var(--c,var(--line)),0 0 0 0 rgba(0,0,0,0)}}
+.lead-name{margin-top:4px;font-size:17.5px;line-height:1.4;font-weight:700;overflow-wrap:anywhere;word-wrap:break-word}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:1px 10px;border-radius:999px;background:var(--sunk);color:var(--ink-2);font-size:12.5px;font-weight:700;line-height:1.75}
+.pill.p1{background:var(--red-soft);color:var(--red)}
+.pill.p2{background:var(--amber-soft);color:var(--amber)}
+.pill.p3{background:var(--sunk);color:var(--ink-2)}
+.pill.stg::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c,var(--ink-3))}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:2px 14px;margin-top:8px;font-size:13.5px;color:var(--ink-2)}
+.meta b{color:var(--ink)}
+.meta a{display:inline-flex;align-items:center;gap:4px;min-height:32px;color:var(--blue);text-decoration:none;font-weight:500}
+.meta a svg{width:15px;height:15px}
+.phone{font-weight:500;color:var(--ink);letter-spacing:.2px}
+
+/* صناديق المراحل — «الخانة التفاعلية» */
+.ask{margin-top:12px;padding:14px;border-radius:16px;background:var(--blue-soft);border:1.5px solid var(--blue-line);border-right:6px solid var(--st-sent)}
+.ask-q{font-size:16px;font-weight:700;line-height:1.55}
+.ask-q::before{content:"؟";display:inline-block;width:26px;height:26px;margin-left:8px;border-radius:50%;background:var(--st-sent);color:var(--blue-soft);font-size:16px;line-height:26px;text-align:center;vertical-align:1px}
+.ask-sub{margin-top:4px;font-size:13px;color:var(--ink-2)}
+.ask-btns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.ask-btns .btn{min-height:50px;padding:6px 4px;font-size:14px;font-weight:700;line-height:1.35}
+.a-warm{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.a-cold{color:var(--red);border-color:var(--red-line)}
+.a-none{color:var(--ink)}
+.box-rem{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;color:var(--ink-2)}
+.box-rem svg{width:15px;height:15px;flex:none}
+.box-rem.late{color:var(--red);font-weight:700}
+.box-rem.today{color:var(--amber);font-weight:700}
+.warn{margin-top:8px;padding:10px 12px;border-radius:14px;background:var(--amber-soft);border:1px solid var(--amber-line);color:var(--amber);font-size:13.5px;font-weight:500;line-height:1.6}
+.warn .form-row{margin-top:8px}
+.sbox{margin-top:12px;padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:var(--surface-2)}
+.sbox.warm{background:var(--orange-soft);border-color:transparent}
+.sbox.won{background:var(--wa-soft);border-color:transparent}
+.sbox-t{font-size:15px;font-weight:700}
+.sbox-s{margin-top:2px;font-size:13px;color:var(--ink-2)}
+.sbox .btn{margin-top:10px}
+.box-list{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px}
+.box-list li{display:flex;align-items:flex-start;gap:6px;font-size:13.5px;line-height:1.5}
+.box-list svg{width:15px;height:15px;flex:none;margin-top:3px}
+.box-list li.late{color:var(--red)}
+.box-list li.today{color:var(--amber)}
+
+/* الفجوة / الاحتياج / الباقة */
+.secs{display:grid;gap:8px;margin-top:12px}
+.sec{padding:9px 12px;border-radius:14px;background:var(--surface-2);border:1px solid var(--line)}
+.sec h4{font-size:12.5px;font-weight:700;color:var(--brand);line-height:1.6}
+.sec p{font-size:14px;line-height:1.75;white-space:pre-line;overflow-wrap:anywhere;word-wrap:break-word}
+.sec-offer{background:var(--brand-soft);border-color:transparent}
+.sec-offer p{font-weight:500}
+.secs.clamp .sec p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.more{display:block;min-height:44px;margin:0 auto;padding:4px 14px;border:0;background:none;color:var(--brand);font-size:13.5px;font-weight:700;cursor:pointer}
+.lastnote{display:flex;gap:8px;align-items:flex-start;margin-top:10px;padding:9px 12px;border-radius:12px;background:var(--amber-soft);font-size:13.5px;line-height:1.6}
+.lastnote svg{width:16px;height:16px;flex:none;margin-top:3px;color:var(--amber)}
+.lastnote span{flex:1;min-width:0;overflow-wrap:anywhere;white-space:pre-line}
+.lastnote time{flex:none;font-size:11.5px;color:var(--ink-3)}
+
+/* أزرار البطاقة */
+.acts{display:grid;gap:8px;margin-top:12px}
+.acts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.acts-grid .btn{flex-direction:column;gap:3px;min-height:58px;padding:6px 2px;font-size:12.5px}
+.acts-grid .btn svg{width:19px;height:19px}
+.inform{margin-top:10px;padding:12px;border-radius:16px;border:1px solid var(--line-2);background:var(--surface-2)}
+.inform-t{font-size:15px;font-weight:700}
+.deal-sum{padding:8px 10px;border-radius:10px;background:var(--surface);font-size:13.5px;color:var(--ink-2);line-height:1.6}
+.deal-sum b{color:var(--ink)}
+.subfold{border-top:1px dashed var(--line-2);padding-top:6px}
+.subfold>summary{min-height:44px;display:flex;align-items:center;font-size:13.5px;font-weight:700;color:var(--brand);cursor:pointer}
+.subfold[open]{display:grid;gap:10px}
+
+/* سجل النشاط */
+.log{margin-top:8px;font-size:13px}
+.log>summary{min-height:44px;color:var(--ink-2);font-weight:500}
+.log>summary::before{content:"";width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:6px solid currentColor;transition:transform .2s}
+.log[open]>summary::before{transform:rotate(-90deg)}
+.log ol{list-style:none;margin:0 4px 4px 0;padding:0 14px 0 0;border-right:2px solid var(--line)}
+.log li{position:relative;padding:5px 0;line-height:1.55;overflow-wrap:anywhere}
+.log li::before{content:"";position:absolute;top:13px;right:-19px;width:8px;height:8px;border-radius:50%;background:var(--line-2)}
+.log li.t-note::before{background:var(--gold)}
+.log li.t-stage::before{background:var(--brand)}
+.log time{display:block;font-size:11.5px;color:var(--ink-3)}
+
+/* الإعدادات والتنبيهات */
+.panel{margin-top:12px;padding:14px 16px}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.panel-head h2{font-size:18px}
+.set-sec{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.set-sec h3{margin-bottom:8px;font-size:15px}
+.note-box{margin-top:8px;padding:10px 12px;border-radius:12px;background:var(--amber-soft);border:1px solid var(--amber-line);color:var(--amber);font-size:14px;font-weight:700;line-height:1.6}
+.banner{margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--red-soft);border:1px solid var(--red-line);color:var(--red);font-size:13.5px;font-weight:500}
+.empty{margin-top:4px;padding:28px 16px;border:1px dashed var(--line-2);border-radius:var(--r);text-align:center;color:var(--ink-2)}
+.empty .btn{margin-top:10px}
+.foot{margin-top:24px;text-align:center;font-size:12.5px;color:var(--ink-3)}
+.toast{position:fixed;left:12px;right:12px;bottom:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:50;max-width:520px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 8px 8px 8px;padding-right:16px;border-radius:16px;background:var(--ink);color:var(--bg);box-shadow:0 10px 30px rgba(0,0,0,.28);font-size:14.5px;line-height:1.5;opacity:0;visibility:hidden;transform:translateY(120%);transition:transform .25s ease,opacity .25s ease,visibility 0s linear .25s}
+.toast.show{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.t-msg{flex:1;min-width:0;padding:6px 0}
+.toast .btn{flex:none;background:transparent;border-color:currentColor;color:inherit;font-weight:700}
+@media (min-width:560px){.acts-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.lead{padding:16px 18px}}
+@media (max-width:370px){.ask-btns .btn{font-size:13px}.stat b{font-size:20px}}
+@media (prefers-reduced-motion:reduce){.toast,.bar i,.rem-group>summary::after,.fold>summary::after{transition:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <button class="brand" type="button" data-act="top" aria-label="خط المبيعات — للأعلى">
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12715A"/><stop offset="1" stop-color="#0B4A3B"/></linearGradient></defs><rect width="512" height="512" rx="120" fill="url(#hg)"/><rect x="112" y="262" width="72" height="110" rx="22" fill="#fff"/><rect x="220" y="202" width="72" height="170" rx="22" fill="#fff"/><rect x="328" y="136" width="72" height="236" rx="22" fill="#F2B84B"/></svg>
+      <span><b>خط المبيعات</b><small>أسامة · رام</small></span>
+    </button>
+    <button class="icon-btn" type="button" data-act="go-rem" aria-label="التذكيرات المستحقة">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+      <span class="badge" id="bellCount" hidden></span>
+    </button>
+    <button class="icon-btn" type="button" data-act="open-add" aria-label="إضافة عميل">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+    </button>
+    <button class="icon-btn" type="button" id="setBtn" data-act="toggle-settings" aria-label="الإعدادات" aria-expanded="false" aria-controls="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="banner" id="storeWarn" hidden>المتصفح مانع التخزين — تعديلاتك ما راح تنحفظ بعد ما تقفل الصفحة. افتحها في متصفح عادي (مو وضع التصفح الخفي) وصدّر نسخة احتياطية.</p>
+
+  <section class="panel panelbox" id="settings" hidden aria-labelledby="setTitle">
+    <div class="panel-head">
+      <h2 id="setTitle">الإعدادات</h2>
+      <button class="icon-btn" type="button" data-act="toggle-settings" aria-label="إغلاق الإعدادات">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <form class="form" id="setForm" data-form="settings" autocomplete="off">
+      <div class="set-sec">
+        <h3>الهدف والتذكيرات</h3>
+        <div class="grid2">
+          <label class="field"><span>الهدف (ريال)</span><input name="goal" inputmode="numeric"></label>
+          <label class="field"><span>متابعة بعد الإرسال (أيام)</span><input name="followDays" inputmode="numeric"></label>
+          <label class="field"><span>تذكير الاطمئنان كل (أيام)</span><input name="checkinDays" inputmode="numeric"></label>
+        </div>
+      </div>
+      <div class="set-sec">
+        <h3>طريقة فتح الواتساب</h3>
+        <label class="field"><span class="sr">طريقة فتح الواتساب</span>
+          <select name="waMode">
+            <option value="auto">تلقائي</option>
+            <option value="app">إجبار التطبيق الشخصي</option>
+            <option value="web">رابط wa.me</option>
+          </select>
+        </label>
+        <p class="note-box">لو طلع لك اختيار بين واتساب وواتساب الأعمال أول مرة، اختر واتساب واضغط دائمًا.</p>
+        <p class="hint" id="waDevice"></p>
+      </div>
+      <div class="set-sec">
+        <h3>نص الرسالة</h3>
+        <label class="field"><span class="sr">نص الرسالة</span><textarea name="template" rows="7"></textarea></label>
+        <p class="hint">المتغيرات تنستبدل تلقائيًا: <b>{الاسم}</b> · <b>{القطاع}</b> · <b>{الفجوة}</b></p>
+        <div class="form-row" style="margin-top:8px">
+          <button class="btn btn-primary" type="submit">حفظ الإعدادات</button>
+          <button class="btn btn-ghost" type="button" data-act="reset-template">رجّع النص الافتراضي</button>
+        </div>
+      </div>
+    </form>
+    <div class="set-sec">
+      <h3>التنبيهات</h3>
+      <button class="btn btn-block" type="button" data-act="notif">فعّل التنبيهات</button>
+      <p class="hint" id="notifState"></p>
+      <p class="hint">التنبيه يطلع لك لما تفتح الصفحة وفيه تذكيرات متأخرة أو مستحقة اليوم. ما يوصلك شي والجوال مقفل أو الصفحة مسكّرة — GitHub Pages ما فيه سيرفر يرسل تنبيهات.</p>
+    </div>
+    <div class="set-sec">
+      <h3>نسخة احتياطية</h3>
+      <p class="hint" id="backupState"></p>
+      <div class="form-row" style="margin-top:8px">
+        <button class="btn" type="button" data-act="export">تصدير (نسخ + تنزيل ملف)</button>
+        <label class="btn" for="importFile">استيراد من ملف</label>
+      </div>
+      <input class="sr" type="file" id="importFile" name="importFile" accept="application/json,.json,text/plain">
+      <details class="fold">
+        <summary>استيراد بلصق النص</summary>
+        <div class="fold-body form">
+          <label class="field"><span>الصق محتوى النسخة الاحتياطية (JSON)</span><textarea id="importText" name="importText" rows="4" dir="ltr"></textarea></label>
+          <button class="btn" type="button" data-act="import-text">استيراد</button>
+        </div>
+      </details>
+      <p class="hint">البيانات محفوظة في هذا المتصفح فقط. لو مسحت بيانات المتصفح تنمسح — صدّر نسخة كل أسبوع.</p>
+    </div>
+  </section>
+
+  <section class="goal panelbox" id="goal" aria-label="الهدف"></section>
+  <section class="stats" id="stats" aria-label="إحصائيات"></section>
+  <section class="rem" id="rem" aria-label="التذكيرات" hidden></section>
+
+  <div class="tools">
+    <label class="search">
+      <span class="sr">بحث</span>
+      <input id="q" name="q" type="search" placeholder="ابحث: اسم، قطاع، رقم" autocomplete="off" enterkeyhint="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </label>
+    <label class="sort">
+      <span class="sr">الفرز</span>
+      <select id="sort" name="sort">
+        <option value="score">الأهم أولًا</option>
+        <option value="remind">أقرب تذكير</option>
+        <option value="recent">الأحدث</option>
+        <option value="value">الأعلى قيمة</option>
+      </select>
+    </label>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="فلترة حسب المرحلة"></div>
+
+  <div class="adds">
+  <details class="fold" id="addFold">
+    <summary>➕ إضافة عميل</summary>
+    <form class="fold-body form" data-form="add" autocomplete="off">
+      <label class="field"><span>الاسم *</span><input name="name" required></label>
+      <div class="grid2">
+        <label class="field"><span>رقم الجوال</span><input name="phone" type="tel" dir="ltr" inputmode="tel" placeholder="05xxxxxxxx"></label>
+        <label class="field"><span>القطاع</span><input name="sector" list="sectorList"></label>
+        <label class="field"><span>القيمة الشهرية (ريال)</span><input name="expected" inputmode="numeric"></label>
+        <label class="field"><span>عدد الأشهر</span><input name="months" inputmode="numeric" value="1"></label>
+        <label class="field"><span>الأولوية</span><select name="pri"><option value="1">عالية</option><option value="2" selected>متوسطة</option><option value="3">منخفضة</option></select></label>
+        <label class="field"><span>الرابط</span><input name="url" dir="ltr" inputmode="url" placeholder="https://"></label>
+      </div>
+      <label class="field"><span>الفجوة عندهم</span><textarea name="gap" rows="2"></textarea></label>
+      <label class="field"><span>ايش يحتاجه فعلًا</span><textarea name="need" rows="2"></textarea></label>
+      <label class="field"><span>الباقة المقترحة</span><textarea name="offer" rows="2"></textarea></label>
+      <button class="btn btn-primary" type="submit">إضافة العميل</button>
+    </form>
+  </details>
+
+  <details class="fold" id="pasteFold">
+    <summary>⚡ لصق سريع</summary>
+    <div class="fold-body form">
+      <p class="hint">كل سطر عميل بهذي الصيغة: <b>الاسم ، الرقم ، القطاع ، القيمة</b> — الفاصلة العربية أو الإنجليزية أو التاب، كلها تشتغل.</p>
+      <label class="field"><span class="sr">الأسطر</span><textarea class="ta" id="pasteBox" name="paste" rows="6" placeholder="مطعم الريف ، 0551234567 ، مطاعم ، 3000&#10;عيادة النخبة, 0559876543, عيادات, 6000"></textarea></label>
+      <button class="btn btn-primary" type="button" data-act="paste-add">أضف الكل</button>
+    </div>
+  </details>
+  </div>
+
+  <p class="list-head" id="listHead" aria-live="polite"></p>
+  <section class="list" id="list" aria-label="العملاء"></section>
+  <p class="foot">بياناتك محفوظة في هذا الجهاز فقط · صدّر نسخة احتياطية من الإعدادات</p>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="t-msg" id="toastMsg"></span>
+  <button class="btn" type="button" id="toastAct" hidden></button>
+</div>
+<datalist id="sectorList"></datalist>
+
+<script>
+// SEED — قائمة العملاء الأصلية (74 عميل).
+// أول تشغيل تنسخ للتخزين. بعدها ما تدوس على تعديلاتك: بس العملاء الي الـ id حقهم مو موجود ينضافون.
+var SEED = [
+{"id":"l_fancyfood","name":"Fancy Food 2026","sector":"فعاليات","phone":"","expected":4500,"months":2,"pri":1,"gap":"معرض المأكولات الفاخرة — الرياض، جامعة الأميرة نورة، ١٠–١٤ ديسمبر. كل المحتوى صور AI ثابتة بلا ولا فيديو. الموقع saudi-fancyfood.com لسه «سنعود قريبًا» يعني زر Apply now يودّي لصفحة مو جاهزة. الحساب عمره أيام و٧ متابعين.","need":"تحويل صورهم الثابتة إلى مقاطع AI بنفس هويتهم، وصفحة تسجيل عارضين تشتغل قبل ما يبدأ التسجيل.","offer":"٦ مقاطع AI + صفحة تسجيل عارضين — 4,500 ريال/شهر × 2 شهر"},
+{"id":"l_joinin","name":"JOININ Coffee & Social Club","sector":"مقاهي","phone":"","expected":3200,"months":3,"pri":1,"gap":"جدة · ٦٬٧٣٩ متابع و١٢٦ منشور، ومحتواهم كويس فعلاً — لا تتكلم عن المحتوى أبدًا. الفجوة الوحيدة: الرابط الوحيد في البايو خريطة قوقل. لا منيو أونلاين، لا جدول فعاليات، ولا حجز للمساحة.","need":"صفحة واحدة تفتح من البايو: منيو + أوقات + فعاليات + زر حجز واتساب.","offer":"صفحة ويب واحدة + ربط بالبايو — 3,200 ريال"},
+{"id":"l_beijing","name":"مطعم بيجين","sector":"مطاعم","phone":"","expected":4500,"months":2,"pri":1,"gap":"٤ فروع وفرع خامس قريب في ريد سي مول = ميزانية افتتاح مرصودة. كل المحتوى تصاميم ثابتة، ولا موقع — ما يظهرون في بحث قوقل أصلًا.","need":"محتوى فيديو للفرع الجديد + موقع يظهر في البحث. الافتتاح الجاي هو نافذتك.","offer":"باقة افتتاح فرع: فيديو تشويقي + تغطية + موقع — 4,500 ريال/شهر × 2 شهر"},
+{"id":"l_devcraft","name":"DevCraft","sector":"أخرى","phone":"0506212588","expected":3000,"months":6,"pri":2,"gap":"الحساب والرقم وصلوني من استاذ محمد — يعني مو عميل بارد، فيه تزكية.","need":"تحقّق من نشاطهم ومحتواهم قبل ما تتواصل وحدّد الفجوة بنفسك. لا ترسل رسالة عامة لعميل جاي بتزكية.","offer":"يتحدد بعد ما تشوف حسابهم"},
+{"id":"g01","name":"مجمع درة العالمي لطب الأسنان","sector":"عيادات","phone":"0555339982","expected":6000,"months":6,"pri":1,"gap":"تقييمهم 4.6 من 1,800 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: الأمير ماجد.","need":"محتوى الطبيب نفسه يشرح ويطمّن المريض — مو إعلان «تبييض بـ٤٩٩». الإعلان السعري ينزل سعرك، ومحتوى الثقة يرفعه. قيمة المريض الواحد عندهم بالآلاف فالباقة تبدو رخيصة بنظرهم.","offer":"باقة محتوى طبي: ٦ فيديوهات للطبيب + إدارة الحساب + حملة ممولة — 6,000 ريال/شهر × 6 شهر"},
+{"id":"g02","name":"عيادات جرين دنت لطب وزراعة وتقويم الأسنان","sector":"عيادات","phone":"0544407607","expected":6000,"months":6,"pri":1,"gap":"تقييمهم 4.7 من 758 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: طريق المدينة المنورة.","need":"محتوى الطبيب نفسه يشرح ويطمّن المريض — مو إعلان «تبييض بـ٤٩٩». الإعلان السعري ينزل سعرك، ومحتوى الثقة يرفعه. قيمة المريض الواحد عندهم بالآلاف فالباقة تبدو رخيصة بنظرهم.","offer":"باقة محتوى طبي: ٦ فيديوهات للطبيب + إدارة الحساب + حملة ممولة — 6,000 ريال/شهر × 6 شهر"},
+{"id":"g03","name":"مجمع أول ابتسامة لطب الأسنان","sector":"عيادات","phone":"0560754631","expected":6000,"months":6,"pri":1,"gap":"تقييمهم 4.6 من 988 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: الأمير ماجد.","need":"محتوى الطبيب نفسه يشرح ويطمّن المريض — مو إعلان «تبييض بـ٤٩٩». الإعلان السعري ينزل سعرك، ومحتوى الثقة يرفعه. قيمة المريض الواحد عندهم بالآلاف فالباقة تبدو رخيصة بنظرهم.","offer":"باقة محتوى طبي: ٦ فيديوهات للطبيب + إدارة الحساب + حملة ممولة — 6,000 ريال/شهر × 6 شهر"},
+{"id":"g04","name":"عيادات المرجان الماسية","sector":"عيادات","phone":"0559873173","expected":6000,"months":6,"pri":1,"gap":"تقييمهم 4.6 من 685 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: غرناطة.","need":"محتوى الطبيب نفسه يشرح ويطمّن المريض — مو إعلان «تبييض بـ٤٩٩». الإعلان السعري ينزل سعرك، ومحتوى الثقة يرفعه. قيمة المريض الواحد عندهم بالآلاف فالباقة تبدو رخيصة بنظرهم.","offer":"باقة محتوى طبي: ٦ فيديوهات للطبيب + إدارة الحساب + حملة ممولة — 6,000 ريال/شهر × 6 شهر"},
+{"id":"g05","name":"عيادات ريماس لطب الأسنان","sector":"عيادات","phone":"0590054862","expected":6000,"months":6,"pri":2,"gap":"تقييمهم 4.3 من 339 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: هيفاء مول - بوابة ٤.","need":"محتوى الطبيب نفسه يشرح ويطمّن المريض — مو إعلان «تبييض بـ٤٩٩». الإعلان السعري ينزل سعرك، ومحتوى الثقة يرفعه. قيمة المريض الواحد عندهم بالآلاف فالباقة تبدو رخيصة بنظرهم.","offer":"باقة محتوى طبي: ٦ فيديوهات للطبيب + إدارة الحساب + حملة ممولة — 6,000 ريال/شهر × 6 شهر"},
+{"id":"g06","name":"عاجي لطب الأسنان - جدة","sector":"عيادات","phone":"0506777915","expected":6000,"months":6,"pri":1,"gap":"تقييمهم 4.3 من 1,317 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: جدة. ⚠️ ملاحظة مهمة: هذا النشاط يشتري إعلانات قوقل الآن — يعني عنده ميزانية تسويق مرصودة فعلًا، وما تحتاج تقنعه إن التسويق يستاهل، تحتاج تقنعه إنك أفضل من الي شغال معه.","need":"محتوى الطبيب نفسه يشرح ويطمّن المريض — مو إعلان «تبييض بـ٤٩٩». الإعلان السعري ينزل سعرك، ومحتوى الثقة يرفعه. قيمة المريض الواحد عندهم بالآلاف فالباقة تبدو رخيصة بنظرهم.","offer":"باقة محتوى طبي: ٦ فيديوهات للطبيب + إدارة الحساب + حملة ممولة — 6,000 ريال/شهر × 6 شهر"},
+{"id":"g07","name":"صفوة المهيدب لطب الأسنان - السبعين","sector":"عيادات","phone":"0535242928","expected":6000,"months":6,"pri":1,"gap":"تقييمهم 4.3 من 641 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: مشرفة - شارع السبعين. ⚠️ سلسلة فروع — القرار غالبًا مركزي وأبطأ، بس لو انفتح يكون عقد كبير.","need":"محتوى الطبيب نفسه يشرح ويطمّن المريض — مو إعلان «تبييض بـ٤٩٩». الإعلان السعري ينزل سعرك، ومحتوى الثقة يرفعه. قيمة المريض الواحد عندهم بالآلاف فالباقة تبدو رخيصة بنظرهم.","offer":"باقة محتوى طبي: ٦ فيديوهات للطبيب + إدارة الحساب + حملة ممولة — 6,000 ريال/شهر × 6 شهر"},
+{"id":"g08","name":"المهيدب لطب الأسنان - الرحاب","sector":"عيادات","phone":"0536663911","expected":6000,"months":6,"pri":1,"gap":"تقييمهم 4.2 من 721 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: جعفر القريشي. ⚠️ سلسلة فروع — القرار غالبًا مركزي وأبطأ، بس لو انفتح يكون عقد كبير.","need":"محتوى الطبيب نفسه يشرح ويطمّن المريض — مو إعلان «تبييض بـ٤٩٩». الإعلان السعري ينزل سعرك، ومحتوى الثقة يرفعه. قيمة المريض الواحد عندهم بالآلاف فالباقة تبدو رخيصة بنظرهم.","offer":"باقة محتوى طبي: ٦ فيديوهات للطبيب + إدارة الحساب + حملة ممولة — 6,000 ريال/شهر × 6 شهر"},
+{"id":"g09","name":"دكتورة أسماء حجازي","sector":"مراكز تجميل","phone":"0567460080","expected":7000,"months":6,"pri":1,"gap":"تقييمهم 4.7 من 2,221 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: مركز بن حمران - الأمير محمد بن عبدالعزيز.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g10","name":"عيادات صفا الماسي الطبية - الصفا","sector":"مراكز تجميل","phone":"0546444116","expected":7000,"months":6,"pri":1,"gap":"تقييمهم 4.7 من 2,505 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: الصفا - طريق الأمير متعب. ⚠️ ملاحظة مهمة: هذا النشاط يشتري إعلانات قوقل الآن — يعني عنده ميزانية تسويق مرصودة فعلًا، وما تحتاج تقنعه إن التسويق يستاهل، تحتاج تقنعه إنك أفضل من الي شغال معه.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g11","name":"عيادات سكين لايف skin life","sector":"مراكز تجميل","phone":"0555451581","expected":7000,"months":6,"pri":1,"gap":"تقييمهم 4.8 من 1,346 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: الأمير محمد بن عبدالعزيز.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g12","name":"عيادة كوزموديرم","sector":"مراكز تجميل","phone":"0557040333","expected":7000,"months":6,"pri":1,"gap":"تقييمهم 4.8 من 939 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: سعود الفيصل.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g13","name":"Lilia Clinic - ليليا كلينيك","sector":"مراكز تجميل","phone":"0563040455","expected":7000,"months":6,"pri":1,"gap":"تقييمهم 4.6 من 822 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: التحلية سنتر.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g14","name":"عيادات لوتس الطبية","sector":"مراكز تجميل","phone":"0508034753","expected":7000,"months":6,"pri":1,"gap":"تقييمهم 4.5 من 825 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: الفضل.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g15","name":"عيادات سوفت لذر","sector":"مراكز تجميل","phone":"0556363971","expected":7000,"months":6,"pri":1,"gap":"تقييمهم 4.2 من 610 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: طريق الأمير متعب.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g16","name":"عيادة الليزر","sector":"مراكز تجميل","phone":"0508700701","expected":7000,"months":6,"pri":1,"gap":"تقييمهم 4.2 من 515 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: شارع فلسطين.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g17","name":"DermElite","sector":"مراكز تجميل","phone":"0553092030","expected":7000,"months":6,"pri":2,"gap":"تقييمهم 4.8 من 311 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: Platini Tower.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g18","name":"الدكتورة شيماء منصور | جلدية وتجميل وليزر","sector":"مراكز تجميل","phone":"0562508842","expected":7000,"months":6,"pri":2,"gap":"تقييمهم 4.8 من 207 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: طريق الأمير سلطان - دوار القبضة.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g19","name":"عيادة الابتسامة الأولى للجلدية والأسنان","sector":"مراكز تجميل","phone":"0547019383","expected":7000,"months":6,"pri":2,"gap":"تقييمهم 4.9 من 215 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: حائل.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g20","name":"مجمع الليزر الطبي المتخصص","sector":"مراكز تجميل","phone":"0561876697","expected":7000,"months":6,"pri":2,"gap":"تقييمهم 4.4 من 190 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: شارع فلسطين.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g21","name":"زان بيوتي","sector":"مراكز تجميل","phone":"0552649076","expected":7000,"months":6,"pri":2,"gap":"تقييمهم 4.3 من 139 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: جدة.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g22","name":"عيادة الدكتورة آلاء عارف | جلدية وتجميل","sector":"مراكز تجميل","phone":"0550511567","expected":7000,"months":6,"pri":2,"gap":"تقييمهم 4.4 من 107 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: طريق الملك عبدالعزيز.","need":"محتوى «قبل وبعد» حقيقي بموافقة العميلات + شرح الأجهزة بصوت الطبيبة. أعلى قطاع في السعودية من ناحية ميزانية التسويق، وأغلبهم يشترون إعلانات بمحتوى مسحوب من الإنترنت.","offer":"باقة شاملة: تصوير قبل/بعد + ٨ ريلز + إدارة الحملات — 7,000 ريال/شهر × 6 شهر"},
+{"id":"g23","name":"The car spa - غسيل وتلميع ونانو وحماية","sector":"أخرى","phone":"0506834444","expected":3000,"months":6,"pri":1,"gap":"تقييمهم 4.5 من 2,354 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: صاري فرعي.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g24","name":"كول بلس - التلميع الساطع - نانو سيراميك","sector":"أخرى","phone":"0544327474","expected":3000,"months":6,"pri":1,"gap":"تقييمهم 4.6 من 1,193 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: جدة.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g25","name":"مركز الحماية الكاملة - عازل حراري ونانو","sector":"أخرى","phone":"0555511449","expected":3000,"months":6,"pri":1,"gap":"تقييمهم 4.7 من 802 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: الأمير محمد بن عبدالعزيز.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g26","name":"بروف كاركير - شارع الستين","sector":"أخرى","phone":"0567679129","expected":3000,"months":6,"pri":1,"gap":"تقييمهم 4.4 من 754 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: شارع الستين - طريق الملك فهد.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g27","name":"شركة التلميع الساطع - سعود الفيصل","sector":"أخرى","phone":"0543435067","expected":3000,"months":6,"pri":1,"gap":"تقييمهم 4.2 من 668 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: سعود الفيصل.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g28","name":"كارشيلد مشرفة - أفلام الحماية والعزل","sector":"أخرى","phone":"0560014245","expected":3000,"months":6,"pri":1,"gap":"تقييمهم 4.8 من 568 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: التضامن العربي.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g29","name":"فور دي","sector":"أخرى","phone":"0501088446","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.6 من 329 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: نداء الأمل.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g30","name":"درع السيارة الاحترافي","sector":"أخرى","phone":"0565812974","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.9 من 306 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: شارع دلة.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g31","name":"ثري إم جدة 3M Care style","sector":"أخرى","phone":"0541408188","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.8 من 309 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: السلامة - طريق المدينة النازل.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g32","name":"عازل حراري يورا لأفلام الحماية","sector":"أخرى","phone":"0576424661","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.8 من 295 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: طريق المكرونة.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g33","name":"جميل لتلميع السيارات","sector":"أخرى","phone":"0550806030","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.4 من 218 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: الخطيب التبريزي - البوادي.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g34","name":"3M جدة","sector":"أخرى","phone":"0506287841","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.8 من 188 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: طريق المدينة المنورة.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g35","name":"Blue Wave","sector":"أخرى","phone":"0597717720","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.5 من 168 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: ريحانة الجزيرة.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g36","name":"Glow armor - الدرع المتوهج","sector":"أخرى","phone":"0557282470","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 5.0 من 137 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: أم القرى.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g37","name":"Nano Zone","sector":"أخرى","phone":"0593996868","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.8 من 135 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: أم القرى - الرحاب.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g38","name":"برو ماستر للعناية بالسيارات","sector":"أخرى","phone":"0502629519","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.8 من 101 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: سعود الفيصل.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g39","name":"تلميع يورا للعناية الشاملة","sector":"أخرى","phone":"0597251462","expected":3000,"months":6,"pri":2,"gap":"تقييمهم 4.7 من 87 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: طريق الملك فهد فرعي.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g40","name":"بيور كار لتلميع السيارات","sector":"أخرى","phone":"0566968638","expected":3000,"months":6,"pri":3,"gap":"تقييمهم 4.8 من 73 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: جدة.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g41","name":"جونسون - فرع سلطان بن سلمان","sector":"أخرى","phone":"0564882904","expected":3000,"months":6,"pri":1,"gap":"تقييمهم 4.1 من 22 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: سلطان بن سلمان. ⚠️ ملاحظة مهمة: هذا النشاط يشتري إعلانات قوقل الآن — يعني عنده ميزانية تسويق مرصودة فعلًا، وما تحتاج تقنعه إن التسويق يستاهل، تحتاج تقنعه إنك أفضل من الي شغال معه.","need":"خدمتهم بصرية ١٠٠٪ ومحتواهم صور ثابتة. ريلز «قبل وبعد» بالسلو موشن ينفجر في هذا القطاع، وساعة تصوير وحدة تطلع محتوى أسبوعين. أسهل قطاع تثبت له نتيجة خلال أسبوعين.","offer":"٨ ريلز شهريًا + إدارة الحساب — 3,000 ريال/شهر × 6 شهر"},
+{"id":"g42","name":"كيو واي QY العقارية","sector":"عقار","phone":"0559149272","expected":5000,"months":6,"pri":2,"gap":"تقييمهم 4.9 من 390 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: جدة.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g43","name":"محاور التقدم العقارية","sector":"عقار","phone":"0564888666","expected":5000,"months":6,"pri":2,"gap":"تقييمهم 4.5 من 387 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: صاري فرعي.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g44","name":"مكتب عطاالله للعقار والمزادات","sector":"عقار","phone":"0565655858","expected":5000,"months":6,"pri":2,"gap":"تقييمهم 4.7 من 196 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: السلامة - حديقة رامي.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g45","name":"مكتب الوقت المناسب للعقار","sector":"عقار","phone":"0547147076","expected":5000,"months":6,"pri":2,"gap":"تقييمهم 4.7 من 125 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: محمد سعيد ناصيف.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g46","name":"فرصة المتميزة للخدمات العقارية","sector":"عقار","phone":"0555117422","expected":5000,"months":6,"pri":1,"gap":"تقييمهم 4.9 من 92 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: البلدية. ⚠️ ملاحظة مهمة: هذا النشاط يشتري إعلانات قوقل الآن — يعني عنده ميزانية تسويق مرصودة فعلًا، وما تحتاج تقنعه إن التسويق يستاهل، تحتاج تقنعه إنك أفضل من الي شغال معه.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g47","name":"المحضار للعقار","sector":"عقار","phone":"0500094550","expected":5000,"months":6,"pri":3,"gap":"تقييمهم 4.4 من 75 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: ابن حمزة الحسيني - سعود الفيصل.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g48","name":"مكتب الجدعاني للعقار","sector":"عقار","phone":"0559522660","expected":5000,"months":6,"pri":3,"gap":"تقييمهم 4.6 من 61 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: منصور السطوحي.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g49","name":"الجابر للاستثمار العقاري","sector":"عقار","phone":"0565350155","expected":5000,"months":6,"pri":3,"gap":"تقييمهم 4.8 من 55 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: الشاكرين.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g50","name":"مؤسسة المنظار للعقارات","sector":"عقار","phone":"0566464800","expected":5000,"months":6,"pri":3,"gap":"تقييمهم 4.7 من 48 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: شارع المؤلفين.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g51","name":"أدوار السعادة العقارية","sector":"عقار","phone":"0545000405","expected":5000,"months":6,"pri":3,"gap":"تقييمهم 4.9 من 46 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: محمد الأشقر - الصفا.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g52","name":"كيانا العقارية","sector":"عقار","phone":"0552490925","expected":5000,"months":6,"pri":3,"gap":"تقييمهم 4.4 من 31 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: قاسم زينل - الروضة.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g53","name":"مكتب الطليعة للعقار","sector":"عقار","phone":"0555646833","expected":5000,"months":6,"pri":3,"gap":"تقييمهم 4.0 من 21 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: إبراهيم الخزامي.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g54","name":"مكتب الأزوري للعقار","sector":"عقار","phone":"0555905886","expected":5000,"months":6,"pri":3,"gap":"تقييمهم 4.8 من 15 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: جدة.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g55","name":"جلبان العقارية","sector":"عقار","phone":"0570705655","expected":5000,"months":6,"pri":3,"gap":"تقييمهم 4.1 من 41 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: الأنباري.","need":"جولة فيديو عمودية لكل وحدة بدل صور الجوال الأفقية. عمولة صفقة وحدة تغطي باقة سنة كاملة — أسهل مبرر سعر في السوق كله.","offer":"تصوير الوحدات + محتوى شهري + صفحة عرض — 5,000 ريال/شهر × 6 شهر"},
+{"id":"g56","name":"دار الزبرج للديكور","sector":"عقار","phone":"0544462861","expected":4000,"months":6,"pri":1,"gap":"تقييمهم 4.8 من 6,179 مراجعة على خرائط قوقل — يعني الناس الي جربوهم راضين جدًا، والمشكلة الوحيدة إن الي ما جربهم ما يعرفهم. الموقع: عبدالله بن محمد الخليفي.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g57","name":"برستيج للديكور - ورق جدران وباركيه","sector":"عقار","phone":"0573635428","expected":4000,"months":6,"pri":2,"gap":"تقييمهم 4.4 من 191 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: الأمير محمد بن عبدالعزيز.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g58","name":"بيرفكت للديكور - خزائن ونجارة","sector":"عقار","phone":"0502972512","expected":4000,"months":6,"pri":2,"gap":"تقييمهم 4.0 من 129 مراجعة على خرائط قوقل — سمعة محترمة وحضور رقمي أقل منها بكثير. الموقع: جدة.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g59","name":"شركة أر أم للتصميم الداخلي والتنفيذ","sector":"عقار","phone":"0501203666","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 4.8 من 65 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: مركز سليمان العزام - المعادي.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g60","name":"Elite Designs | إيليت ديزاينز","sector":"عقار","phone":"0544140230","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 4.9 من 56 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: طريق المكرونة.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g61","name":"شركة نخبة المبتكرون المحدودة","sector":"عقار","phone":"0555100967","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 4.9 من 39 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: البغدادية - برج رجال الأعمال.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g62","name":"القمة للديكور - تصميم وتنفيذ وإشراف","sector":"عقار","phone":"0556015227","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 4.0 من 34 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: طريق المكرونة.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g63","name":"البيت للديكور Albayt Decor","sector":"عقار","phone":"0555403250","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 4.4 من 27 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: الحمراء.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g64","name":"Decor and more ksa - ديكور وأكثر","sector":"عقار","phone":"0537606626","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 3.8 من 24 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: شارع الكيال.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g65","name":"Ymlink للمقاولات العامة","sector":"عقار","phone":"0543557939","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 5.0 من 22 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: البلدية.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g66","name":"فن ديزاين fundesign","sector":"عقار","phone":"0500494987","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 4.8 من 20 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: الطريق الدائري.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g67","name":"لمسة جمال للمقاولات والديكور","sector":"عقار","phone":"0503665867","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 4.2 من 20 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: شارع المكرونة.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g68","name":"شركة نجوم الديكور","sector":"عقار","phone":"0503639175","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 4.0 من 19 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: طريق المكرونة.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g69","name":"مؤسسة قمة الغربية للديكور","sector":"عقار","phone":"0568779535","expected":4000,"months":6,"pri":3,"gap":"تقييمهم 5.0 من 16 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: درويش كيال.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"},
+{"id":"g70","name":"شركة اركوفا للتصميم الداخلي والخارجي","sector":"عقار","phone":"0507805501","expected":4000,"months":6,"pri":1,"gap":"تقييمهم 5.0 من 5 مراجعة على خرائط قوقل — نشاط صغير ويكبر، وهذي أفضل مرحلة تدخل فيها معهم لأن الميزانية لسه ما انحجزت لوكالة. الموقع: أحمد بن كثير. ⚠️ ملاحظة مهمة: هذا النشاط يشتري إعلانات قوقل الآن — يعني عنده ميزانية تسويق مرصودة فعلًا، وما تحتاج تقنعه إن التسويق يستاهل، تحتاج تقنعه إنك أفضل من الي شغال معه.","need":"عندهم أرشيف ضخم «قبل وبعد» مرمي في جوال المهندس. أنت تشتغل على مواد موجودة أصلًا فتسليمك سريع وهامشك عالي. هذا القطاع يبيع بالشكل، فالمحتوى عندهم مو رفاهية.","offer":"تحويل الأرشيف لمحتوى + ٦ ريلز شهريًا — 4,000 ريال/شهر × 6 شهر"}
+];
+</script>
+<script>
+(function () {
+  'use strict';
+
+  /* ============ الثوابت ============ */
+  var STORE_KEY = 'osama_crm_v1';
+  var VERSION = 1;
+  var STAGES = ['new', 'sent', 'warm', 'cold', 'won', 'lost'];
+  var STAGE_LABEL = { 'new': 'جديد', 'sent': 'أُرسلت', 'warm': 'مهتم', 'cold': 'رد ورفض', 'won': 'عقد مُغلق', 'lost': 'مرفوض نهائيًا' };
+  var PRI_LABEL = { 1: 'عالية', 2: 'متوسطة', 3: 'منخفضة' };
+  var WARM_DAYS = 2;      // «رد وهو مهتم» → تذكير بعد يومين
+  var COLD_DAYS = 45;     // «رد ورفض» → نرجع له بعد ٤٥ يوم
+  var RENEW_BEFORE = 30;  // تذكير التجديد قبل نهاية العقد بـ ٣٠ يوم
+  var DEFAULT_TEMPLATE = 'السلام عليكم\nمعك أسامة من شركة رام\nمريت على {الاسم} ولفت نظري إن تقييمكم وسمعتكم ممتازة بس حضوركم على السوشال ميديا أقل من مستواكم بكثير\nأنا أشتغل محتوى فيديو وإعلانات، وأقدر أوريك بدقيقتين ايش الناقص وكيف يتحسب بالأرقام\nمين المسؤول عن التسويق عندكم أكلمه؟';
+  var REM_TEXT = {
+    sent: 'متابعة الرسالة — وش صار؟',
+    warm: 'مهتم — كمّل معه وأغلق العقد',
+    cold: 'محاولة ثانية بعد الرفض',
+    checkin: 'تذكير اطمئنان على العميل',
+    renew: 'العقد يخلص قريبًا — كلّمه للتجديد'
+  };
+  var DAYS = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+  var MONTHS = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+
+  var UA = navigator.userAgent || '';
+  var IS_ANDROID = /Android/i.test(UA);
+  var IS_IOS = /iPhone|iPad|iPod/i.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  var data = null;        // { version, leads, settings }
+  var storageOK = true;
+
+  /* ============ أدوات عامة ============ */
+  function $(id) { return document.getElementById(id); }
+  function has(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+  function isArr(a) { return Object.prototype.toString.call(a) === '[object Array]'; }
+  function str(s) { return s == null ? '' : String(s); }
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  function now() { return new Date().getTime(); }
+
+  // اهرب من أي نص قبل ما ينحط في innerHTML
+  function esc(s) {
+    return str(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  var idSeq = 0;
+  function newId() { return 'm' + now().toString(36) + (idSeq++).toString(36) + Math.random().toString(36).slice(2, 6); }
+
+  var AR_DIGITS = '٠١٢٣٤٥٦٧٨٩';
+  function arDigits(s) { return str(s).replace(/[0-9]/g, function (d) { return AR_DIGITS.charAt(+d); }); }
+  function enDigits(s) {
+    return str(s)
+      .replace(/[٠-٩]/g, function (d) { return String(d.charCodeAt(0) - 0x0660); })
+      .replace(/[۰-۹]/g, function (d) { return String(d.charCodeAt(0) - 0x06F0); });
+  }
+  function toNum(s) {
+    var t = enDigits(s).replace(/[٬,\s]/g, '').replace('٫', '.');
+    var n = parseFloat(t);
+    return isFinite(n) ? n : 0;
+  }
+  function posInt(v, d) { var n = Math.round(toNum(v)); return n > 0 ? n : d; }
+  function posNum(v, d) { var n = toNum(v); return n > 0 ? n : d; }
+  function fmtNum(n) {
+    n = Math.round(+n || 0);
+    var s = String(Math.abs(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return (n < 0 ? '-' : '') + arDigits(s).replace(/,/g, '٬');
+  }
+  function money(n) { return fmtNum(n) + ' ريال'; }
+  function daysWord(n) {
+    n = Math.abs(n);
+    if (n === 1) return 'يوم';
+    if (n === 2) return 'يومين';
+    return arDigits(n) + (n <= 10 ? ' أيام' : ' يوم');
+  }
+  function monthsWord(n) {
+    if (n === 1) return 'شهر';
+    if (n === 2) return 'شهرين';
+    return arDigits(n) + (n <= 10 ? ' أشهر' : ' شهر');
+  }
+
+  // تطبيع عربي للبحث: يشيل التشكيل ويوحّد الألف والياء والتاء المربوطة
+  function norm(s) {
+    return enDigits(s).toLowerCase()
+      .replace(/[ً-ٰٟـ]/g, '')
+      .replace(/[آأإٱ]/g, 'ا')
+      .replace(/ى/g, 'ي')
+      .replace(/ة/g, 'ه')
+      .replace(/ؤ/g, 'و')
+      .replace(/ئ/g, 'ي');
+  }
+
+  /* ============ التواريخ (بالتوقيت المحلي، مفتاح YYYY-MM-DD) ============ */
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function dayKey(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function today() { return dayKey(new Date()); }
+  function parseDay(k) { var p = str(k).split('-'); return new Date(+p[0], +p[1] - 1, +p[2], 12, 0, 0); }
+  function validDay(k) { return /^\d{4}-\d{2}-\d{2}$/.test(str(k)) && !isNaN(parseDay(k).getTime()); }
+  function addDays(k, n) { var d = parseDay(k); d.setDate(d.getDate() + n); return dayKey(d); }
+  function diffDays(a, b) { return Math.round((parseDay(b).getTime() - parseDay(a).getTime()) / 86400000); }
+  function fmtDay(k, withYear) {
+    if (!validDay(k)) return '';
+    var d = parseDay(k);
+    var s = DAYS[d.getDay()] + ' ' + arDigits(d.getDate()) + ' ' + MONTHS[d.getMonth()];
+    if (withYear || d.getFullYear() !== new Date().getFullYear()) s += ' ' + arDigits(d.getFullYear());
+    return s;
+  }
+  function relDay(k) {
+    var n = diffDays(today(), k);
+    if (n === 0) return 'اليوم';
+    if (n === 1) return 'بكرة';
+    if (n === -1) return 'أمس';
+    return n > 0 ? 'بعد ' + daysWord(n) : 'متأخر ' + daysWord(n);
+  }
+  function urgency(k, t) {
+    var n = diffDays(t || today(), k);
+    return n < 0 ? 'late' : n === 0 ? 'today' : n <= 7 ? 'week' : 'later';
+  }
+  function fmtStamp(ts) {
+    var d = new Date(ts), h = d.getHours(), m = d.getMinutes(), ap = h < 12 ? 'ص' : 'م';
+    h = h % 12 || 12;
+    return fmtDay(dayKey(d)) + ' · ' + arDigits(h + ':' + pad(m)) + ' ' + ap;
+  }
+
+  /* ============ الواتساب ============ */
+  // ينظّف الرقم: يشيل أي شي مو رقم، يشيل 00966 أو 966 أو الصفر من البداية، ويركّب 966
+  function cleanPhone(p) {
+    var raw = enDigits(p).replace(/^\s+/, '');
+    var d = raw.replace(/\D/g, '');
+    if (!d) return '';
+    if (d.indexOf('00966') === 0) d = d.slice(5);
+    else if (d.indexOf('966') === 0) d = d.slice(3);
+    else if (/^(\+|00)/.test(raw)) return d.replace(/^00/, ''); // رقم دولي صريح من دولة ثانية: يبقى زي ما هو
+    d = d.replace(/^0+/, '');
+    return d ? '966' + d : '';
+  }
+
+  // يبني الرابط حسب الجهاز. أندرويد: Intent مع package=com.whatsapp عشان يفتح الشخصي مو الأعمال
+  function waLink(phone, text, mode) {
+    var num = cleanPhone(phone);
+    if (!num) return '';
+    var t = encodeURIComponent(text || '');
+    var web = 'https://wa.me/' + num + '?text=' + t;
+    if (mode === 'web') return web;
+    if (IS_ANDROID) {
+      return 'intent://send?phone=' + num + '&text=' + t +
+        '#Intent;scheme=whatsapp;package=com.whatsapp;S.browser_fallback_url=' + encodeURIComponent(web) + ';end';
+    }
+    if (IS_IOS || mode === 'app') return 'whatsapp://send?phone=' + num + '&text=' + t;
+    return web;
+  }
+
+  function buildMsg(l) {
+    var tpl = l.customMsg && l.customMsg.replace(/\s/g, '') ? l.customMsg : (S().template || DEFAULT_TEMPLATE);
+    return tpl.split('{الاسم}').join(l.name || '')
+      .split('{القطاع}').join(l.sector || '')
+      .split('{الفجوة}').join(l.gap || '');
+  }
+
+  /* ============ البيانات والتخزين ============ */
+  function S() { return data.settings; }
+
+  function normSettings(s) {
+    s = s && typeof s === 'object' ? s : {};
+    var out = {}, k;
+    for (k in s) if (has(s, k)) out[k] = s[k];
+    out.goal = posNum(s.goal, 25000);
+    out.followDays = posInt(s.followDays, 3);
+    out.checkinDays = posInt(s.checkinDays, 14);
+    out.waMode = s.waMode === 'app' || s.waMode === 'web' ? s.waMode : 'auto';
+    out.template = typeof s.template === 'string' && s.template.replace(/\s/g, '') ? s.template : DEFAULT_TEMPLATE;
+    out.sort = typeof s.sort === 'string' ? s.sort : 'score';
+    out.lastBackupAt = +s.lastBackupAt || 0;
+    return out;
+  }
+
+  function normContract(c) {
+    var monthly = Math.max(0, toNum(c.monthly)), months = posInt(c.months, 1);
+    return {
+      monthly: monthly, months: months, start: c.start,
+      end: validDay(c.end) ? c.end : addDays(c.start, months * 30),
+      value: monthly * months
+    };
+  }
+
+  function normLead(src) {
+    src = src && typeof src === 'object' ? src : {};
+    var l = {}, k;
+    for (k in src) if (has(src, k)) l[k] = src[k];
+    l.id = str(src.id) || newId();
+    l.name = str(src.name).replace(/^\s+|\s+$/g, '') || 'بدون اسم';
+    l.sector = str(src.sector); l.phone = str(src.phone); l.url = str(src.url);
+    l.gap = str(src.gap); l.need = str(src.need); l.offer = str(src.offer);
+    l.customMsg = str(src.customMsg);
+    l.expected = Math.max(0, toNum(src.expected));
+    l.months = posInt(src.months, 1);
+    l.pri = +src.pri === 1 || +src.pri === 3 ? +src.pri : 2;
+    l.stage = STAGES.indexOf(src.stage) >= 0 ? src.stage : 'new';
+    l.sentAt = validDay(src.sentAt) ? src.sentAt : '';
+    l.followUps = Math.max(0, Math.round(toNum(src.followUps)));
+    l.reminders = (isArr(src.reminders) ? src.reminders : []).filter(function (r) {
+      return r && validDay(r.date);
+    }).map(function (r) {
+      return { id: str(r.id) || newId(), k: r.k === 'checkin' || r.k === 'renew' ? r.k : 'stage', date: r.date, text: str(r.text) };
+    });
+    l.contract = src.contract && typeof src.contract === 'object' && validDay(src.contract.start) ? normContract(src.contract) : null;
+    l.log = (isArr(src.log) ? src.log : []).filter(function (e) { return e && e.text; }).map(function (e) {
+      return { at: +e.at || now(), text: str(e.text), type: str(e.type) };
+    });
+    l.createdAt = +src.createdAt || now();
+    l.updatedAt = +src.updatedAt || l.createdAt;
+    l.deletedAt = +src.deletedAt || 0;
+    return l;
+  }
+
+  function normData(d) {
+    if (isArr(d)) d = { leads: d };
+    d = d && typeof d === 'object' ? d : {};
+    var seen = {}, leads = [];
+    (isArr(d.leads) ? d.leads : []).forEach(function (x) {
+      if (!x || typeof x !== 'object') return;
+      var l = normLead(x);
+      if (seen[l.id]) l.id = newId();
+      seen[l.id] = true;
+      leads.push(l);
+    });
+    return { version: VERSION, leads: leads, settings: normSettings(d.settings) };
+  }
+
+  // يضيف بس عملاء SEED الي الـ id حقهم مو موجود — ما يلمس أي تعديل محفوظ
+  function mergeSeed(d) {
+    var have = {}, added = 0;
+    d.leads.forEach(function (l) { have[l.id] = true; });
+    (typeof SEED !== 'undefined' && isArr(SEED) ? SEED : []).forEach(function (s) {
+      if (s && s.id != null && !have[String(s.id)]) {
+        d.leads.push(normLead(s));
+        have[String(s.id)] = true;
+        added++;
+      }
+    });
+    return added;
+  }
+
+  function load() {
+    var raw = null, parsed = null, note = '';
+    try {
+      var tk = STORE_KEY + '__test';
+      window.localStorage.setItem(tk, '1');
+      window.localStorage.removeItem(tk);
+    } catch (e) { storageOK = false; }
+    try { raw = window.localStorage.getItem(STORE_KEY); } catch (e) { storageOK = false; }
+    if (raw) {
+      try { parsed = JSON.parse(raw); } catch (e) {
+        try { window.localStorage.setItem(STORE_KEY + '_broken_' + now(), raw); } catch (e2) { /* تجاهل */ }
+        note = 'البيانات المحفوظة كانت تالفة — حفظت نسخة منها وبدأت من القائمة الأصلية';
+      }
+    }
+    data = normData(parsed);
+    var added = mergeSeed(data);
+    if (!parsed || added) save();
+    return { first: !raw, added: added, note: note };
+  }
+
+  var saveWarned = false;
+  function save() {
+    if (!storageOK) return false;
+    try {
+      window.localStorage.setItem(STORE_KEY, JSON.stringify(data));
+      return true;
+    } catch (e) {
+      if (!saveWarned) { saveWarned = true; toast('تعذّر الحفظ — التخزين ممتلئ أو مقفل. صدّر نسخة احتياطية الحين'); }
+      return false;
+    }
+  }
+
+  function getLead(id) {
+    for (var i = 0; i < data.leads.length; i++) if (data.leads[i].id === id) return data.leads[i];
+    return null;
+  }
+  function alive() { return data.leads.filter(function (l) { return !l.deletedAt; }); }
+  function findByPhone(p) {
+    var c = cleanPhone(p), a = alive();
+    if (!c) return null;
+    for (var i = 0; i < a.length; i++) if (cleanPhone(a[i].phone) === c) return a[i];
+    return null;
+  }
+  function findByName(n) {
+    var q = norm(n).replace(/\s+/g, ' '), a = alive();
+    for (var i = 0; i < a.length; i++) if (norm(a[i].name).replace(/\s+/g, ' ') === q) return a[i];
+    return null;
+  }
+  function leadValue(l) { return l.stage === 'won' && l.contract ? l.contract.value : l.expected * l.months; }
+
+  /* ============ السجل والتذكيرات ============ */
+  function addLog(l, text, type) {
+    l.log.push({ at: now(), text: text, type: type || '' });
+    if (l.log.length > 300) l.log.splice(0, l.log.length - 300);
+    l.updatedAt = now();
+  }
+  function findRem(l, rid) {
+    for (var i = 0; i < l.reminders.length; i++) if (l.reminders[i].id === rid) return l.reminders[i];
+    return null;
+  }
+  function remOf(l, k) {
+    for (var i = 0; i < l.reminders.length; i++) if (l.reminders[i].k === k) return l.reminders[i];
+    return null;
+  }
+  function setRem(l, k, date, text) {
+    var r = remOf(l, k);
+    if (!r) { r = { id: newId(), k: k }; l.reminders.push(r); }
+    r.date = date; r.text = text;
+    return r;
+  }
+  function dropRem(l, k) { l.reminders = l.reminders.filter(function (r) { return r.k !== k; }); }
+  function byDate(a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; }
+
+  /* ============ المسار: انتقالات المراحل ============ */
+  function toSent(l) {
+    var t = today(), second = l.stage === 'cold', fd = S().followDays;
+    l.stage = 'sent'; l.sentAt = t; l.followUps = 0;
+    dropRem(l, 'checkin'); dropRem(l, 'renew');
+    setRem(l, 'stage', addDays(t, fd), REM_TEXT.sent);
+    addLog(l, (second ? 'أُرسلت رسالة واتساب (محاولة ثانية)' : 'أُرسلت رسالة واتساب') + ' ← أُرسلت · تذكير بعد ' + daysWord(fd), 'stage');
+  }
+  function answerWarm(l) {
+    l.stage = 'warm';
+    setRem(l, 'stage', addDays(today(), WARM_DAYS), REM_TEXT.warm);
+    addLog(l, 'رد وهو مهتم ← مهتم · تذكير بعد ' + daysWord(WARM_DAYS), 'stage');
+  }
+  function answerCold(l) {
+    l.stage = 'cold';
+    setRem(l, 'stage', addDays(today(), COLD_DAYS), REM_TEXT.cold);
+    addLog(l, 'رد ورفض ← رد ورفض · محاولة ثانية بعد ' + daysWord(COLD_DAYS), 'stage');
+  }
+  function answerNone(l) {
+    var fd = S().followDays;
+    l.followUps += 1;
+    setRem(l, 'stage', addDays(today(), fd), REM_TEXT.sent);
+    addLog(l, 'ما رد لسه · متابعة رقم ' + arDigits(l.followUps) + ' · التذكير تأجل ' + daysWord(fd), 'follow');
+  }
+  function closeDeal(l, monthly, months, start) {
+    var c = normContract({ monthly: monthly, months: months, start: start }), t = today();
+    l.stage = 'won';
+    l.contract = c;
+    dropRem(l, 'stage');
+    setRem(l, 'checkin', addDays(start > t ? start : t, S().checkinDays), REM_TEXT.checkin);
+    setRem(l, 'renew', addDays(c.end, -RENEW_BEFORE), REM_TEXT.renew);
+    addLog(l, 'عقد مُغلق ✓ ' + money(c.monthly) + ' × ' + monthsWord(c.months) + ' = ' + money(c.value) + ' · ينتهي ' + fmtDay(c.end, true), 'stage');
+  }
+  function toLost(l) {
+    l.stage = 'lost';
+    l.reminders = [];
+    addLog(l, 'انقفل ← مرفوض نهائيًا', 'stage');
+  }
+  function toNew(l) {
+    l.stage = 'new';
+    l.followUps = 0;
+    dropRem(l, 'stage');
+    addLog(l, 'رجع للقائمة ← جديد', 'stage');
+  }
+  // تغيير المرحلة يدويًا من نموذج التعديل — نفس آثار الأزرار
+  function setStage(l, st) {
+    if (st === l.stage || STAGES.indexOf(st) < 0) return;
+    if (st === 'sent') toSent(l);
+    else if (st === 'warm') answerWarm(l);
+    else if (st === 'cold') answerCold(l);
+    else if (st === 'won') closeDeal(l, l.expected, l.months, today());
+    else if (st === 'lost') toLost(l);
+    else toNew(l);
+    var e = l.log[l.log.length - 1];
+    if (e) e.text = 'يدويًا: ' + e.text;
+  }
+  function snooze(l, rid, n) {
+    var r = findRem(l, rid), t = today();
+    if (!r) return '';
+    r.date = addDays(r.date > t ? r.date : t, n);
+    addLog(l, 'تأجيل «' + r.text + '» إلى ' + fmtDay(r.date), 'snooze');
+    return r.date;
+  }
+  function remDone(l, rid) {
+    var r = findRem(l, rid);
+    if (!r) return;
+    if (r.k === 'checkin') {
+      r.date = addDays(today(), S().checkinDays);
+      addLog(l, 'تم الاطمئنان ✓ · الجاي ' + fmtDay(r.date), 'done');
+    } else {
+      l.reminders = l.reminders.filter(function (x) { return x !== r; });
+      addLog(l, 'تم ✓ ' + r.text, 'done');
+    }
+  }
+
+  /* ============ الأيقونات ============ */
+  var ICONS = {
+    chat: '<path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/>',
+    phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/>',
+    copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
+    pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
+    edit: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+    note: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/>',
+    trash: '<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    renew: '<path d="M21 12a9 9 0 1 1-2.6-6.4L21 8"/><path d="M21 3v5h-5"/>',
+    link: '<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>'
+  };
+  function ic(n) {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[n] + '</svg>';
+  }
+
+  /* ============ حالة الواجهة (ما تنحفظ) ============ */
+  var ui = { filter: 'all', sort: 'score', q: '', form: {}, expand: {}, logOpen: {}, remOpen: {} };
+
+  function counts() {
+    var c = { all: 0 };
+    STAGES.forEach(function (s) { c[s] = 0; });
+    alive().forEach(function (l) { c.all++; c[l.stage]++; });
+    return c;
+  }
+
+  /* ============ الهدف ============ */
+  function renderGoal() {
+    var won = 0, goal = S().goal;
+    alive().forEach(function (l) { if (l.stage === 'won' && l.contract) won += l.contract.value; });
+    var pct = goal > 0 ? won / goal * 100 : 0, left = Math.max(0, goal - won);
+    $('goal').innerHTML =
+      '<div class="goal-row"><span class="goal-lbl">العقود المُغلقة مقابل الهدف</span><span class="goal-pct">' + arDigits(Math.floor(pct)) + '٪</span></div>' +
+      '<div class="goal-row"><b class="goal-sum">' + money(won) + '</b><span class="goal-of">من ' + money(goal) + '</span></div>' +
+      '<div class="bar" role="progressbar" aria-label="نسبة تحقيق الهدف" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + Math.min(100, Math.floor(pct)) + '"><i style="width:' + Math.min(100, pct).toFixed(1) + '%"></i></div>' +
+      '<p class="goal-left">' + (left > 0
+        ? 'باقي <b>' + money(left) + '</b> وتوصل الهدف'
+        : 'وصلت الهدف 🎉' + (won > goal ? ' — وزدت عليه <b>' + money(won - goal) + '</b>' : '')) + '</p>';
+  }
+
+  /* ============ الإحصائيات والشرائح ============ */
+  function renderStats(c) {
+    var keys = [['new', 'جديد'], ['sent', 'أُرسلت'], ['warm', 'مهتم'], ['won', 'مُغلق']];
+    $('stats').innerHTML = keys.map(function (k) {
+      var on = ui.filter === k[0];
+      return '<button type="button" class="stat st-' + k[0] + (on ? ' is-on' : '') + '" data-act="filter" data-f="' + k[0] + '" aria-pressed="' + on + '"><b>' + arDigits(c[k[0]]) + '</b><span>' + k[1] + '</span></button>';
+    }).join('');
+  }
+  function renderChips(c) {
+    $('chips').innerHTML = ['all'].concat(STAGES).map(function (k) {
+      var on = ui.filter === k;
+      return '<button type="button" class="chip' + (on ? ' is-on' : '') + '" data-act="filter" data-f="' + k + '" aria-pressed="' + on + '">' +
+        (k === 'all' ? 'الكل' : STAGE_LABEL[k]) + ' <i>' + arDigits(c[k]) + '</i></button>';
+    }).join('');
+  }
+
+  /* ============ التذكيرات: متأخرة / اليوم / خلال الأسبوع ============ */
+  function dueGroups() {
+    var t = today(), g = { late: [], today: [], week: [] };
+    alive().forEach(function (l) {
+      l.reminders.forEach(function (r) {
+        var n = diffDays(t, r.date), it = { l: l, r: r, n: n };
+        if (n < 0) g.late.push(it);
+        else if (n === 0) g.today.push(it);
+        else if (n <= 7) g.week.push(it);
+      });
+    });
+    function by(a, b) { return a.n - b.n || a.l.pri - b.l.pri; }
+    g.late.sort(by); g.today.sort(by); g.week.sort(by);
+    return g;
+  }
+
+  function remItem(it) {
+    var id = esc(it.l.id), rid = esc(it.r.id), k = it.r.k;
+    var btns = [1, 3, 7].map(function (n) {
+      return '<button type="button" class="btn" data-act="snooze" data-id="' + id + '" data-rid="' + rid + '" data-days="' + n + '" aria-label="تأجيل ' + daysWord(n) + '">+' + arDigits(n) + '</button>';
+    }).join('');
+    if (k === 'checkin' || k === 'renew') {
+      btns += '<button type="button" class="btn btn-done" data-act="rem-done" data-id="' + id + '" data-rid="' + rid + '">' + ic('check') + 'تم</button>';
+    }
+    return '<li class="rem-item">' +
+      '<button type="button" class="rem-name" data-act="goto" data-id="' + id + '">' + esc(it.l.name) + '</button>' +
+      '<p class="rem-meta">' + esc(it.r.text) + ' · ' + fmtDay(it.r.date) + ' <b>(' + relDay(it.r.date) + ')</b></p>' +
+      '<div class="rem-btns">' + btns + '</div></li>';
+  }
+
+  function renderRem(g) {
+    var defs = [['late', '🔴 متأخرة'], ['today', '🟡 اليوم'], ['week', '🗓 خلال الأسبوع']];
+    var html = defs.map(function (d) {
+      var items = g[d[0]];
+      if (!items.length) return '';
+      var open = has(ui.remOpen, d[0]) ? ui.remOpen[d[0]] : (d[0] !== 'week' || items.length <= 4);
+      return '<details class="rem-group ' + d[0] + '" data-rg="' + d[0] + '"' + (open ? ' open' : '') + '>' +
+        '<summary>' + d[1] + ' <span class="rem-count">' + arDigits(items.length) + '</span></summary>' +
+        '<ul class="rem-list">' + items.map(remItem).join('') + '</ul></details>';
+    }).join('');
+    var box = $('rem');
+    box.innerHTML = html;
+    box.hidden = !html;
+  }
+
+  function updateTitle(g) {
+    var n = g.late.length + g.today.length, b = $('bellCount');
+    document.title = n ? '(' + arDigits(n) + ') خط المبيعات' : 'خط المبيعات';
+    b.textContent = arDigits(n);
+    b.hidden = !n;
+  }
+
+  /* ============ القائمة: بحث + فلترة + فرز ============ */
+  function nextRem(l) {
+    var m = '';
+    l.reminders.forEach(function (r) { if (!m || r.date < m) m = r.date; });
+    return m;
+  }
+  // «الأهم أولًا»: المرحلة + الأولوية + التذكير المتأخر + القيمة المتوقعة
+  function score(l, t) {
+    var s = { 'new': 30, 'sent': 40, 'warm': 60, 'cold': 10, 'won': 0, 'lost': -100 }[l.stage] || 0;
+    s += { 1: 30, 2: 15, 3: 0 }[l.pri] || 0;
+    var m = nextRem(l);
+    if (m) {
+      var n = diffDays(t, m);
+      if (n < 0) s += 50 + Math.min(20, -n * 2);
+      else if (n === 0) s += 40;
+      else if (n <= 7) s += 12 - n;
+    }
+    return s + Math.min(25, leadValue(l) / 2000);
+  }
+
+  function visibleLeads() {
+    var q = norm(ui.q).replace(/^\s+|\s+$/g, ''), qd = enDigits(ui.q).replace(/\D/g, ''), t = today();
+    var rows = [];
+    data.leads.forEach(function (l, i) {
+      if (l.deletedAt) return;
+      if (ui.filter !== 'all' && l.stage !== ui.filter) return;
+      if (q) {
+        var hit = norm(l.name).indexOf(q) >= 0 || norm(l.sector).indexOf(q) >= 0;
+        if (!hit && qd.length >= 3) {
+          hit = enDigits(l.phone).replace(/\D/g, '').indexOf(qd) >= 0 || cleanPhone(l.phone).indexOf(qd.replace(/^0+/, '')) >= 0;
+        }
+        if (!hit) return;
+      }
+      rows.push({ l: l, i: i, s: ui.sort === 'score' ? score(l, t) : 0, v: leadValue(l), m: nextRem(l) || '9999-99-99' });
+    });
+    var cmp = {
+      score: function (a, b) { return b.s - a.s || b.v - a.v; },
+      remind: function (a, b) { return a.m < b.m ? -1 : a.m > b.m ? 1 : a.l.pri - b.l.pri; },
+      recent: function (a, b) { return (b.l.updatedAt - a.l.updatedAt) || (b.i - a.i); },
+      value: function (a, b) { return b.v - a.v || a.l.pri - b.l.pri; }
+    }[ui.sort] || function () { return 0; };
+    rows.sort(function (a, b) { return cmp(a, b) || a.i - b.i; });
+    return rows.map(function (r) { return r.l; });
+  }
+
+  function renderList() {
+    var arr = visibleLeads(), box = $('list');
+    if (!arr.length) {
+      box.innerHTML = '<div class="empty"><p>' + (ui.q ? 'ما لقيت شي لـ «' + esc(ui.q) + '»' : 'ما فيه عملاء في هذي المرحلة') + '</p>' +
+        (ui.q || ui.filter !== 'all' ? '<button type="button" class="btn" data-act="clear-filter">عرض الكل</button>' : '') + '</div>';
+    } else {
+      box.innerHTML = arr.map(cardHTML).join('');
+    }
+    $('listHead').textContent = 'يعرض ' + arDigits(arr.length) + ' من ' + arDigits(alive().length) + ' عميل';
+    fixMore(box);
+  }
+
+  // يخفي زر «اقرأ التفاصيل» لو النص قصير وما انقص
+  function fixMore(root) {
+    if (!root || !root.querySelectorAll) return;
+    var boxes = root.querySelectorAll('.secs.clamp'), res = [], i, j;
+    for (i = 0; i < boxes.length; i++) {
+      var ps = boxes[i].querySelectorAll('p'), over = false;
+      for (j = 0; j < ps.length; j++) if (ps[j].scrollHeight > ps[j].clientHeight + 2) { over = true; break; }
+      res.push([boxes[i].nextElementSibling, over]);
+    }
+    res.forEach(function (x) { if (x[0] && x[0].className === 'more') x[0].hidden = !x[1]; });
+  }
+
+  /* ============ بطاقة العميل ============ */
+  function safeUrl(u) {
+    u = str(u).replace(/^\s+|\s+$/g, '');
+    if (/^https?:\/\/\S+$/i.test(u)) return u;
+    if (/^@[\w.]+$/.test(u)) return 'https://instagram.com/' + u.slice(1);
+    if (/^[\w-]+(\.[\w-]+)+(\/\S*)?$/.test(u)) return 'https://' + u;
+    return '';
+  }
+
+  function remLine(r, label, t) {
+    if (!r) return '';
+    return '<p class="box-rem ' + urgency(r.date, t) + '">' + ic('clock') + '<span>' + label + ': ' + fmtDay(r.date) + ' (' + relDay(r.date) + ')</span></p>';
+  }
+
+  function stageBox(l, t) {
+    var id = esc(l.id), st = l.stage, r = remOf(l, 'stage'), phone = cleanPhone(l.phone);
+    if (st === 'sent') {
+      var times = l.followUps === 1 ? 'مرة' : l.followUps === 2 ? 'مرتين' : 'مرات';
+      var h = '<div class="ask" role="group" aria-label="وش صار بعد الرسالة؟">' +
+        '<p class="ask-q">أرسلت لهم يوم <b>' + (l.sentAt ? fmtDay(l.sentAt) : '—') + '</b>. وش صار؟</p>' +
+        (l.followUps ? '<p class="ask-sub">تابعت ' + (l.followUps > 2 ? arDigits(l.followUps) + ' ' : '') + times + ' وما رد</p>' : '') +
+        remLine(r, 'التذكير', t) +
+        '<div class="ask-btns">' +
+        '<button type="button" class="btn a-warm" data-act="ans-warm" data-id="' + id + '">رد وهو مهتم</button>' +
+        '<button type="button" class="btn a-cold" data-act="ans-cold" data-id="' + id + '">رد ورفض</button>' +
+        '<button type="button" class="btn a-none" data-act="ans-none" data-id="' + id + '">ما رد لسه</button>' +
+        '</div></div>';
+      if (l.followUps >= 3) {
+        h += '<div class="warn">' + arDigits(l.followUps) + ' متابعات بدون رد — إما تغيّر القناة (اتصال أو زيارة) أو تقفلها وتوفّر وقتك.' +
+          '<div class="form-row">' + (phone ? '<a class="btn" href="tel:+' + phone + '">' + ic('phone') + 'اتصال</a>' : '') +
+          '<button type="button" class="btn" data-act="lost" data-id="' + id + '">إقفال نهائي</button></div></div>';
+      }
+      return h;
+    }
+    if (st === 'warm') {
+      if (ui.form[l.id] === 'deal') return dealForm(l);
+      return '<div class="sbox warm"><p class="sbox-t">🔥 مهتم — كمّل معه وأغلق</p>' + remLine(r, 'التذكير', t) +
+        '<button type="button" class="btn btn-primary btn-block" data-act="deal-open" data-id="' + id + '">إغلاق العقد ✓</button></div>';
+    }
+    if (st === 'won') {
+      var c = l.contract, items = l.reminders.slice().sort(byDate).map(function (x) {
+        return '<li class="' + urgency(x.date, t) + '">' + ic(x.k === 'renew' ? 'renew' : 'clock') + '<span>' + esc(x.text) + ': <b>' + fmtDay(x.date) + '</b> (' + relDay(x.date) + ')</span></li>';
+      }).join('');
+      return '<div class="sbox won"><p class="sbox-t">✓ عقد مُغلق' + (c ? ' — ' + money(c.value) : '') + '</p>' +
+        (c ? '<p class="sbox-s">' + money(c.monthly) + ' شهريًا × ' + monthsWord(c.months) + ' · من ' + fmtDay(c.start) + ' إلى ' + fmtDay(c.end, true) + '</p>' : '') +
+        (items ? '<ul class="box-list">' + items + '</ul>' : '') + '</div>';
+    }
+    if (st === 'cold') {
+      return '<div class="sbox cold"><p class="sbox-t">رد ورفض</p>' + remLine(r, 'المحاولة الثانية', t) +
+        '<button type="button" class="btn btn-ghost" data-act="lost" data-id="' + id + '">إقفال نهائي</button></div>';
+    }
+    if (st === 'lost') {
+      return '<div class="sbox"><p class="sbox-t">مرفوض نهائيًا</p>' +
+        '<button type="button" class="btn btn-ghost" data-act="to-new" data-id="' + id + '">إرجاعه للقائمة كجديد</button></div>';
+    }
+    return r ? '<div class="sbox">' + remLine(r, 'تذكير', t) + '</div>' : '';
+  }
+
+  function field(label, control) { return '<label class="field"><span>' + label + '</span>' + control + '</label>'; }
+  function select(name, opts, cur) {
+    return '<select name="' + name + '">' + opts.map(function (o) {
+      return '<option value="' + o[0] + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + o[1] + '</option>';
+    }).join('') + '</select>';
+  }
+  function formBtns(id, label) {
+    return '<div class="form-row"><button type="submit" class="btn btn-primary">' + label + '</button>' +
+      '<button type="button" class="btn btn-ghost" data-act="form-close" data-id="' + id + '">إلغاء</button></div>';
+  }
+
+  function dealSummary(m, n, s) {
+    m = toNum(m); n = Math.round(toNum(n));
+    if (!(m > 0) || !(n > 0) || !validDay(s)) return 'عبّ المبلغ الشهري وعدد الأشهر وتاريخ البداية';
+    var end = addDays(s, n * 30);
+    return 'قيمة العقد <b>' + money(m * n) + '</b> · ينتهي <b>' + fmtDay(end, true) + '</b><br>تذكير التجديد: ' + fmtDay(addDays(end, -RENEW_BEFORE), true);
+  }
+  function dealForm(l) {
+    var id = esc(l.id), t = today();
+    return '<form class="inform form" data-form="deal" data-id="' + id + '">' +
+      '<p class="inform-t">إغلاق العقد ✓</p>' +
+      '<div class="grid2">' +
+      field('المبلغ الشهري (ريال)', '<input name="monthly" inputmode="numeric" required value="' + esc(l.expected || '') + '">') +
+      field('عدد الأشهر', '<input name="months" inputmode="numeric" required value="' + esc(l.months || 1) + '">') +
+      '</div>' +
+      field('تاريخ البداية', '<input name="start" type="date" required value="' + t + '">') +
+      '<p class="deal-sum" data-sum>' + dealSummary(l.expected, l.months, t) + '</p>' +
+      formBtns(id, 'تأكيد الإغلاق') + '</form>';
+  }
+  function editForm(l) {
+    var id = esc(l.id);
+    return '<form class="inform form" data-form="edit" data-id="' + id + '" autocomplete="off">' +
+      '<p class="inform-t">تعديل البيانات</p>' +
+      field('الاسم', '<input name="name" required value="' + esc(l.name) + '">') +
+      '<div class="grid2">' +
+      field('رقم الجوال', '<input name="phone" type="tel" dir="ltr" inputmode="tel" placeholder="05xxxxxxxx" value="' + esc(l.phone) + '">') +
+      field('القطاع', '<input name="sector" list="sectorList" value="' + esc(l.sector) + '">') +
+      field('القيمة الشهرية (ريال)', '<input name="expected" inputmode="numeric" value="' + esc(l.expected || '') + '">') +
+      field('عدد الأشهر', '<input name="months" inputmode="numeric" value="' + esc(l.months) + '">') +
+      field('الأولوية', select('pri', [[1, 'عالية'], [2, 'متوسطة'], [3, 'منخفضة']], l.pri)) +
+      field('المرحلة', select('stage', STAGES.map(function (s) { return [s, STAGE_LABEL[s]]; }), l.stage)) +
+      '</div>' +
+      field('الرابط (موقع أو انستقرام)', '<input name="url" dir="ltr" inputmode="url" placeholder="https://" value="' + esc(l.url) + '">') +
+      field('رسالة مخصصة لهذا العميل <small>— تتجاوز النص العام، اتركها فاضية عشان يستخدم العام</small>',
+        '<textarea name="customMsg" rows="5" placeholder="' + esc(S().template) + '">' + esc(l.customMsg) + '</textarea>') +
+      '<details class="subfold"><summary>تعديل الفجوة والاحتياج والباقة</summary>' +
+      field('الفجوة عندهم', '<textarea name="gap" rows="3">' + esc(l.gap) + '</textarea>') +
+      field('ايش يحتاجه فعلًا', '<textarea name="need" rows="3">' + esc(l.need) + '</textarea>') +
+      field('الباقة المقترحة', '<textarea name="offer" rows="2">' + esc(l.offer) + '</textarea>') +
+      '</details>' + formBtns(id, 'حفظ التعديل') + '</form>';
+  }
+  function noteForm(l) {
+    return '<form class="inform form" data-form="note" data-id="' + esc(l.id) + '">' +
+      field('ملاحظة جديدة', '<textarea name="text" rows="3" required placeholder="مثال: كلمت المدير، طلب عرض سعر على الإيميل"></textarea>') +
+      formBtns(esc(l.id), 'حفظ الملاحظة') + '</form>';
+  }
+
+  function cardHTML(l) {
+    var id = esc(l.id), st = l.stage, t = today(), phone = cleanPhone(l.phone), f = ui.form[l.id], i;
+    var h = '<article class="lead st-' + st + (st === 'cold' ? ' is-cold' : st === 'lost' ? ' is-lost' : '') + '" data-id="' + id + '">';
+
+    // الاسم، الأولوية، القطاع، الرقم، القيمة المتوقعة
+    h += '<h3 class="lead-name">' + esc(l.name) + '</h3>';
+    h += '<div class="pills"><span class="pill p' + l.pri + '">أولوية ' + PRI_LABEL[l.pri] + '</span>' +
+      '<span class="pill stg">' + STAGE_LABEL[st] + '</span>' + (l.sector ? '<span class="pill">' + esc(l.sector) + '</span>' : '') + '</div>';
+    var url = safeUrl(l.url);
+    h += '<div class="meta">' +
+      (l.phone ? '<span class="phone" dir="ltr">' + esc(l.phone) + '</span>' : '<span>بدون رقم</span>') +
+      '<span>القيمة المتوقعة: <b>' + money(l.expected * l.months) + '</b>' + (l.months > 1 ? ' (' + fmtNum(l.expected) + ' × ' + monthsWord(l.months) + ')' : '') + '</span>' +
+      (url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + ic('link') + 'الرابط</a>' : '') + '</div>';
+
+    // الخانة التفاعلية حسب المرحلة
+    h += stageBox(l, t);
+
+    // الفجوة / الاحتياج / الباقة
+    var secs = [['الفجوة عندهم', l.gap, 'gap'], ['ايش يحتاجه فعلًا', l.need, 'need'], ['الباقة المقترحة', l.offer, 'offer']]
+      .filter(function (s) { return s[1]; });
+    if (secs.length) {
+      var open = !!ui.expand[l.id];
+      h += '<div class="secs' + (open ? '' : ' clamp') + '">' + secs.map(function (s) {
+        return '<section class="sec sec-' + s[2] + '"><h4>' + s[0] + '</h4><p>' + esc(s[1]) + '</p></section>';
+      }).join('') + '</div>' +
+        '<button type="button" class="more" data-act="expand" data-id="' + id + '" aria-expanded="' + open + '">' + (open ? 'إخفاء التفاصيل ▴' : 'اقرأ التفاصيل كاملة ▾') + '</button>';
+    }
+
+    // آخر ملاحظة
+    for (i = l.log.length - 1; i >= 0; i--) {
+      if (l.log[i].type === 'note') {
+        h += '<div class="lastnote">' + ic('note') + '<span>' + esc(l.log[i].text) + '</span><time>' + fmtDay(dayKey(new Date(l.log[i].at))) + '</time></div>';
+        break;
+      }
+    }
+
+    // الأزرار
+    var msg = buildMsg(l), wa = phone ? waLink(l.phone, msg, S().waMode) : '';
+    h += '<div class="acts">';
+    if (wa) {
+      var primary = st === 'new' || st === 'cold';
+      h += '<a class="btn ' + (primary ? 'btn-wa' : 'btn-wa-o') + '" href="' + esc(wa) + '" target="_blank" rel="noopener" data-act="send" data-id="' + id + '">' +
+        ic('chat') + (st === 'new' ? 'إرسال واتساب' : st === 'cold' ? 'إرسال واتساب (محاولة ثانية)' : 'فتح محادثة الواتساب') + '</a>';
+    } else {
+      h += '<button type="button" class="btn btn-wa-o" data-act="edit" data-id="' + id + '" data-focus="phone">' + ic('chat') + 'أضف رقم الجوال عشان ترسل</button>';
+    }
+    h += '<div class="acts-grid">' +
+      (phone ? '<a class="btn" href="tel:+' + phone + '">' + ic('phone') + '<span>اتصال</span></a>'
+        : '<button type="button" class="btn" disabled>' + ic('phone') + '<span>اتصال</span></button>') +
+      '<button type="button" class="btn" data-act="copy" data-id="' + id + '">' + ic('copy') + '<span>نسخ الرسالة</span></button>' +
+      '<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=' + esc(encodeURIComponent(l.name)) + '" target="_blank" rel="noopener">' + ic('pin') + '<span>خرائط قوقل</span></a>' +
+      '<button type="button" class="btn' + (f === 'edit' ? ' is-on' : '') + '" data-act="edit" data-id="' + id + '" aria-expanded="' + (f === 'edit') + '">' + ic('edit') + '<span>تعديل</span></button>' +
+      '<button type="button" class="btn' + (f === 'note' ? ' is-on' : '') + '" data-act="note" data-id="' + id + '" aria-expanded="' + (f === 'note') + '">' + ic('note') + '<span>ملاحظة</span></button>' +
+      '<button type="button" class="btn btn-danger" data-act="del" data-id="' + id + '">' + ic('trash') + '<span>حذف</span></button>' +
+      '</div></div>';
+
+    if (f === 'edit') h += editForm(l);
+    if (f === 'note') h += noteForm(l);
+
+    // سجل النشاط
+    if (l.log.length) {
+      h += '<details class="log" data-log="' + id + '"' + (ui.logOpen[l.id] ? ' open' : '') + '><summary>سجل النشاط (' + arDigits(l.log.length) + ')</summary><ol>' +
+        l.log.slice().reverse().map(function (e) {
+          return '<li class="t-' + esc(e.type) + '"><time>' + fmtStamp(e.at) + '</time>' + (e.type === 'note' ? '📝 ' : '') + esc(e.text) + '</li>';
+        }).join('') + '</ol></details>';
+    }
+    return h + '</article>';
+  }
+
+  /* ============ Toast بدل alert ============ */
+  var toastTimer = 0, toastFn = null;
+  function toast(msg, actLabel, fn, ms) {
+    $('toastMsg').textContent = msg;
+    toastFn = fn || null;
+    var b = $('toastAct');
+    b.hidden = !fn;
+    if (fn) b.textContent = actLabel;
+    $('toast').className = 'toast show';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(hideToast, ms || (fn ? 6500 : 3200));
+  }
+  function hideToast() { $('toast').className = 'toast'; toastFn = null; }
+
+  /* ============ الحافظة ============ */
+  function copyText(text, cb) {
+    function fallback() {
+      var ok = false, ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;right:0;opacity:0;font-size:16px';
+      document.body.appendChild(ta);
+      try { ta.select(); ta.setSelectionRange(0, text.length); ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      cb(ok);
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { cb(true); }, fallback);
+        return;
+      }
+    } catch (e) { /* نكمل بالطريقة القديمة */ }
+    fallback();
+  }
+
+  /* ============ تحديث البطاقة بدون ما تقفز الصفحة ============ */
+  function findCard(id) {
+    var n = $('list').children;
+    for (var i = 0; i < n.length; i++) if (n[i].getAttribute('data-id') === id) return n[i];
+    return null;
+  }
+  function renderTop() {
+    var c = counts(), g = dueGroups();
+    renderGoal(); renderStats(c); renderChips(c); renderRem(g); updateTitle(g);
+    return g;
+  }
+  function renderAll() { renderTop(); renderList(); }
+  function refreshCard(id) {
+    var el = findCard(id), l = getLead(id), before = el ? el.getBoundingClientRect().top : null;
+    renderTop();
+    if (el) {
+      if (!l || l.deletedAt) {
+        el.parentNode.removeChild(el);
+        el = null;
+      } else {
+        var tmp = document.createElement('div');
+        tmp.innerHTML = cardHTML(l);
+        var nu = tmp.firstChild;
+        el.parentNode.replaceChild(nu, el);
+        el = nu;
+        fixMore(el);
+      }
+    }
+    if (el && before !== null) {
+      var d = el.getBoundingClientRect().top - before;
+      if (Math.abs(d) > 1) window.scrollBy(0, d);
+    }
+    $('listHead').textContent = 'يعرض ' + arDigits($('list').querySelectorAll('.lead').length) + ' من ' + arDigits(alive().length) + ' عميل';
+  }
+
+  // كل تعديل على عميل: نسخة قبل التعديل → حفظ → تحديث → Toast فيه «تراجع»
+  function mutate(id, fn, msg) {
+    var l = getLead(id);
+    if (!l) return;
+    var snap = clone(l);
+    var res = fn(l);
+    l.updatedAt = now();
+    save();
+    refreshCard(id);
+    if (msg) toast(typeof msg === 'function' ? msg(l, res) : msg, 'تراجع', function () { restoreLead(snap); });
+  }
+  function restoreLead(snap) {
+    for (var i = 0; i < data.leads.length; i++) {
+      if (data.leads[i].id === snap.id) { data.leads[i] = snap; break; }
+    }
+    save();
+    if (findCard(snap.id)) refreshCard(snap.id); else renderAll();
+    toast('رجّعته مثل ما كان');
+  }
+
+  function headerH() { var h = document.querySelector('.top'); return h ? h.offsetHeight : 0; }
+  function reduceMotion() { return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  function scrollToY(y) {
+    y = Math.max(0, y);
+    try { window.scrollTo({ top: y, behavior: reduceMotion() ? 'auto' : 'smooth' }); } catch (e) { window.scrollTo(0, y); }
+  }
+  function scrollToEl(el) {
+    scrollToY(el.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - headerH() - 10);
+  }
+  function gotoCard(id) {
+    var el = findCard(id);
+    if (!el) {
+      ui.filter = 'all'; ui.q = ''; $('q').value = '';
+      renderAll();
+      el = findCard(id);
+    }
+    if (!el) return;
+    scrollToEl(el);
+    el.classList.remove('flash');
+    void el.offsetWidth;
+    el.classList.add('flash');
+  }
+
+  function toggleForm(id, kind, focusName) {
+    ui.form[id] = ui.form[id] === kind && !focusName ? null : kind;
+    refreshCard(id);
+    var card = findCard(id);
+    if (!card || !ui.form[id]) return;
+    var inp = focusName ? card.querySelector('[name="' + focusName + '"]') : kind === 'note' ? card.querySelector('textarea[name="text"]') : null;
+    if (inp) { try { inp.focus(); } catch (e) { /* تجاهل */ } }
+  }
+
+  /* ============ إرسال الواتساب ============ */
+  function onSend(id) {
+    var l = getLead(id);
+    if (!l || (l.stage !== 'new' && l.stage !== 'cold')) return; // في باقي المراحل يفتح المحادثة بس
+    var snap = clone(l);
+    toSent(l);
+    save();
+    // الرابط الحقيقي يفتح أول، وبعدها نحدّث البطاقة
+    setTimeout(function () {
+      refreshCard(id);
+      var r = remOf(l, 'stage');
+      toast('صار «أُرسلت» · التذكير ' + (r ? fmtDay(r.date) : ''), 'تراجع', function () { restoreLead(snap); });
+    }, 350);
+  }
+
+  /* ============ حفظ النماذج ============ */
+  function val(f, n) { var x = f.elements[n]; return x ? str(x.value) : ''; }
+  function trim(s) { return str(s).replace(/^\s+|\s+$/g, ''); }
+
+  function saveEdit(id, f) {
+    var name = trim(val(f, 'name'));
+    if (!name) return toast('الاسم مطلوب');
+    mutate(id, function (l) {
+      var changed = [];
+      function upd(k, v, label) { if (str(l[k]) !== str(v)) { l[k] = v; changed.push(label); } }
+      upd('name', name, 'الاسم');
+      upd('phone', trim(val(f, 'phone')), 'الرقم');
+      upd('sector', trim(val(f, 'sector')), 'القطاع');
+      upd('expected', Math.max(0, toNum(val(f, 'expected'))), 'القيمة');
+      upd('months', posInt(val(f, 'months'), 1), 'الأشهر');
+      upd('pri', +val(f, 'pri') || 2, 'الأولوية');
+      upd('url', trim(val(f, 'url')), 'الرابط');
+      upd('customMsg', val(f, 'customMsg'), 'الرسالة المخصصة');
+      upd('gap', val(f, 'gap'), 'الفجوة');
+      upd('need', val(f, 'need'), 'الاحتياج');
+      upd('offer', val(f, 'offer'), 'الباقة');
+      if (changed.length) addLog(l, 'تعديل: ' + changed.join('، '), 'edit');
+      setStage(l, val(f, 'stage'));
+      ui.form[id] = null;
+    }, 'انحفظ التعديل ✓');
+    refreshSectors();
+  }
+  function saveNote(id, f) {
+    var text = trim(val(f, 'text'));
+    if (!text) return toast('اكتب الملاحظة أول');
+    mutate(id, function (l) { addLog(l, text, 'note'); ui.form[id] = null; }, 'انحفظت الملاحظة ✓');
+  }
+  function saveDeal(id, f) {
+    var m = toNum(val(f, 'monthly')), n = Math.round(toNum(val(f, 'months'))), s = val(f, 'start');
+    if (!(m > 0)) return toast('اكتب المبلغ الشهري');
+    if (!(n > 0)) return toast('اكتب عدد الأشهر');
+    if (!validDay(s)) return toast('اختر تاريخ البداية');
+    mutate(id, function (l) { closeDeal(l, m, n, s); ui.form[id] = null; }, function (l) {
+      return 'مبروك! انقفل العقد ✓ ' + money(l.contract.value);
+    });
+  }
+
+  function addLead(fields, logText) {
+    var l = normLead(fields);
+    l.id = newId();
+    addLog(l, logText, 'add');
+    data.leads.push(l);
+    return l;
+  }
+  function addFromForm(f) {
+    var name = trim(val(f, 'name')), phone = trim(val(f, 'phone'));
+    if (!name) return toast('الاسم مطلوب');
+    var dup = phone ? findByPhone(phone) : null;
+    if (dup) return toast('الرقم موجود عند «' + dup.name + '»', 'عرض', function () { hideToast(); gotoCard(dup.id); });
+    var l = addLead({
+      name: name, phone: phone, sector: trim(val(f, 'sector')), expected: val(f, 'expected'), months: val(f, 'months'),
+      pri: val(f, 'pri'), url: trim(val(f, 'url')), gap: trim(val(f, 'gap')), need: trim(val(f, 'need')), offer: trim(val(f, 'offer'))
+    }, 'انضاف يدويًا');
+    save();
+    f.reset();
+    renderAll();
+    refreshSectors();
+    toast('انضاف «' + name + '»', 'عرض', function () { hideToast(); gotoCard(l.id); });
+  }
+
+  // لصق سريع: «الاسم ، الرقم ، القطاع ، القيمة» — فاصلة عربية أو إنجليزية أو تاب
+  function parsePaste(text) {
+    var rows = [], bad = 0;
+    str(text).split(/\r?\n/).forEach(function (line) {
+      var parts = line.split(/[،,\t;؛]/).map(trim).filter(function (s) { return s; });
+      if (!parts.length) return;
+      var pi = -1, i;
+      for (i = 0; i < parts.length; i++) {
+        var d = enDigits(parts[i]);
+        if (/^[+\d\s\-()]+$/.test(d) && d.replace(/\D/g, '').length >= 8) { pi = i; break; }
+      }
+      var name = '', phone = '', rest = parts;
+      if (pi >= 0) { name = parts.slice(0, pi).join('، '); phone = parts[pi]; rest = parts.slice(pi + 1); }
+      var sector = '', nums = [];
+      rest.forEach(function (s) {
+        var d = trim(enDigits(s).replace(/ريال|ر\.س|sar/gi, ''));
+        if (/\d/.test(d) && /^[\d.٬\s]+$/.test(d)) nums.push(d.replace(/[٬\s]/g, ''));
+        else if (!name) name = s;
+        else if (!sector) sector = s;
+      });
+      var v = nums.length ? nums[0] : '';
+      for (i = 1; i < nums.length && /^\d{3}$/.test(nums[i]); i++) v += nums[i]; // 4,500 انقسمت على الفاصلة
+      if (!name) { bad++; return; }
+      rows.push({ name: name, phone: phone, sector: sector, expected: toNum(v) });
+    });
+    return { rows: rows, bad: bad };
+  }
+  function pasteAdd() {
+    var box = $('pasteBox'), res = parsePaste(box.value), added = 0, dups = 0, seen = {};
+    if (!res.rows.length) return toast('ما لقيت أسطر صالحة — الصيغة: الاسم ، الرقم ، القطاع ، القيمة');
+    res.rows.forEach(function (r) {
+      var c = cleanPhone(r.phone);
+      if (c ? (findByPhone(r.phone) || seen[c]) : findByName(r.name)) { dups++; return; }
+      if (c) seen[c] = true;
+      addLead({ name: r.name, phone: r.phone, sector: r.sector, expected: r.expected, months: 1, pri: 2 }, 'انضاف باللصق السريع');
+      added++;
+    });
+    save();
+    if (added) box.value = '';
+    renderAll();
+    refreshSectors();
+    var msg = 'انضاف ' + arDigits(added) + (dups ? ' · تجاهلت ' + arDigits(dups) + ' مكرر' : '') + (res.bad ? ' · ' + arDigits(res.bad) + ' سطر بدون اسم' : '');
+    if (!added) return toast(msg);
+    toast(msg, 'عرض', function () {
+      hideToast();
+      ui.filter = 'all'; ui.sort = 'recent'; ui.q = ''; $('q').value = ''; $('sort').value = 'recent';
+      renderAll();
+      scrollToEl($('listHead'));
+    });
+  }
+
+  function refreshSectors() {
+    var seen = {}, html = '';
+    alive().forEach(function (l) {
+      if (l.sector && !seen[l.sector]) { seen[l.sector] = true; html += '<option value="' + esc(l.sector) + '"></option>'; }
+    });
+    $('sectorList').innerHTML = html;
+  }
+
+  /* ============ الإعدادات ============ */
+  function deviceHint() {
+    var m = S().waMode;
+    if (m === 'web') return 'الحالي: رابط wa.me — يفتح صفحة واتساب وبعدها يوديك للتطبيق.';
+    if (IS_ANDROID) return 'جهازك أندرويد: الزر يفتح تطبيق واتساب الشخصي (com.whatsapp) مباشرة، ولو مو مثبت يروح لرابط wa.me.';
+    if (IS_IOS) return 'جهازك آيفون: الزر يفتح whatsapp:// — آيفون ما يسمح نحدد الشخصي أو الأعمال، يفتح الي النظام مختاره.';
+    return m === 'app' ? 'كمبيوتر: الزر يفتح برنامج واتساب المثبت (whatsapp://).' : 'كمبيوتر: الزر يفتح wa.me في المتصفح.';
+  }
+  function backupHint() {
+    var at = S().lastBackupAt;
+    $('backupState').textContent = at ? 'آخر نسخة احتياطية: ' + fmtStamp(at) : 'ما صدّرت أي نسخة احتياطية لسه.';
+  }
+  function fillSettings() {
+    var f = $('setForm'), s = S();
+    f.elements['goal'].value = s.goal;
+    f.elements['followDays'].value = s.followDays;
+    f.elements['checkinDays'].value = s.checkinDays;
+    f.elements['waMode'].value = s.waMode;
+    f.elements['template'].value = s.template;
+    $('waDevice').textContent = deviceHint();
+    notifHint();
+    backupHint();
+  }
+  function saveSettings(f, quiet) {
+    var s = S(), tpl = val(f, 'template');
+    s.goal = posNum(val(f, 'goal'), s.goal);
+    s.followDays = posInt(val(f, 'followDays'), s.followDays);
+    s.checkinDays = posInt(val(f, 'checkinDays'), s.checkinDays);
+    s.waMode = val(f, 'waMode') === 'app' || val(f, 'waMode') === 'web' ? val(f, 'waMode') : 'auto';
+    s.template = tpl.replace(/\s/g, '') ? tpl : DEFAULT_TEMPLATE;
+    save();
+    fillSettings();
+    renderAll();
+    if (!quiet) toast('انحفظت الإعدادات ✓');
+  }
+  function toggleSettings() {
+    var p = $('settings'), open = p.hidden;
+    p.hidden = !open;
+    $('setBtn').setAttribute('aria-expanded', String(open));
+    if (open) { fillSettings(); scrollToY(0); }
+  }
+
+  /* ============ التنبيهات ============
+     كلام صريح: GitHub Pages ما فيه سيرفر يرسل Push. التنبيه هنا ينعرض بس لما تفتح الصفحة
+     (أو ترجع لها) وفيه تذكيرات متأخرة أو مستحقة اليوم. والجوال مقفل أو الصفحة مسكّرة: ما يوصلك شي.
+     لو تبي تنبيهات حقيقية وقت ما تكون خارج الصفحة، تحتاج سيرفر (مثل Firebase Cloud Messaging). */
+  function notifHint() {
+    var el = $('notifState');
+    if (!('Notification' in window)) {
+      el.textContent = IS_IOS ? 'على آيفون: التنبيهات تشتغل بس بعد ما تثبّت الصفحة على الشاشة الرئيسية وتفتحها من الأيقونة.' : 'هذا المتصفح ما يدعم التنبيهات.';
+      return;
+    }
+    el.textContent = { granted: 'الحالة: مفعّلة ✓', denied: 'الحالة: مرفوضة — فعّلها من إعدادات المتصفح لهذا الموقع.', 'default': 'الحالة: مو مفعّلة.' }[Notification.permission] || '';
+  }
+  function showNotif(title, body) {
+    if (!('Notification' in window) || Notification.permission !== 'granted') return;
+    var icon = document.querySelector('link[rel="apple-touch-icon"]');
+    var opts = { body: body, tag: 'osama-crm-due', lang: 'ar', dir: 'rtl', icon: icon ? icon.href : undefined };
+    function viaConstructor() { try { new Notification(title, opts); } catch (e) { /* أندرويد يرفض هذي الطريقة */ } }
+    try {
+      if ('serviceWorker' in navigator && navigator.serviceWorker.getRegistration) {
+        navigator.serviceWorker.getRegistration().then(function (reg) {
+          if (reg && reg.active && reg.showNotification) return reg.showNotification(title, opts);
+          viaConstructor();
+        }).then(null, viaConstructor);
+        return;
+      }
+    } catch (e) { /* نكمل */ }
+    viaConstructor();
+  }
+  function requestNotif() {
+    if (!('Notification' in window)) { notifHint(); return toast($('notifState').textContent); }
+    var done = false;
+    function after(r) {
+      if (done) return;
+      done = true;
+      notifHint();
+      if (r === 'granted') {
+        toast('التنبيهات مفعّلة ✓');
+        showNotif('التنبيهات شغالة ✓', 'بيطلع لك تنبيه لما تفتح الصفحة وفيه تذكيرات مستحقة.');
+      } else if (r === 'denied') toast('انرفض الإذن — تقدر تفعّله من إعدادات المتصفح');
+    }
+    try {
+      var p = Notification.requestPermission(after);
+      if (p && p.then) p.then(after);
+    } catch (e) { toast('ما قدرت أطلب الإذن'); }
+  }
+  function notifyDue(g) {
+    var items = g.late.concat(g.today), names = [], seen = {};
+    if (!items.length) return;
+    items.forEach(function (it) {
+      if (!seen[it.l.id] && names.length < 3) { seen[it.l.id] = true; names.push(it.l.name); }
+    });
+    var n = items.length;
+    showNotif('عندك ' + (n === 1 ? 'تذكير مستحق' : n === 2 ? 'تذكيرين مستحقين' : arDigits(n) + ' تذكيرات مستحقة') + (g.late.length ? ' (' + arDigits(g.late.length) + ' متأخر)' : ''),
+      names.join('، ') + (n > names.length ? ' …' : ''));
+  }
+
+  /* ============ النسخة الاحتياطية ============ */
+  function doExport() {
+    S().lastBackupAt = now();
+    save();
+    var json = JSON.stringify(data, null, 2), name = 'osama-crm-' + today() + '.json', downloaded = false;
+    try {
+      var url = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+      var a = document.createElement('a');
+      a.href = url; a.download = name; a.rel = 'noopener';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
+      downloaded = true;
+    } catch (e) { /* بعض المتصفحات تمنع التنزيل — النسخ للحافظة يكفي */ }
+    copyText(json, function (ok) {
+      toast((ok ? 'انتسخت النسخة للحافظة' : 'ما قدرت أنسخ للحافظة') + (downloaded ? ' ونزل ملف ' + name : ''), null, null, 5000);
+      backupHint();
+    });
+  }
+  function importJSON(text) {
+    var parsed;
+    try { parsed = JSON.parse(trim(text)); } catch (e) { return toast('النص مو JSON صحيح'); }
+    var leads = isArr(parsed) ? parsed : parsed && isArr(parsed.leads) ? parsed.leads : null;
+    if (!leads || !leads.some(function (x) { return x && x.name; })) return toast('ما لقيت عملاء في هذي النسخة');
+    var prev = data;
+    data = normData(parsed);
+    mergeSeed(data);
+    ui.form = {};
+    save();
+    fillSettings();
+    refreshSectors();
+    renderAll();
+    toast('تم الاستيراد: ' + arDigits(alive().length) + ' عميل', 'تراجع', function () {
+      data = prev; save(); fillSettings(); refreshSectors(); renderAll();
+      toast('رجعت البيانات الي قبل الاستيراد');
+    });
+  }
+
+  /* ============ الأحداث ============ */
+  function closest(el, sel) {
+    while (el && el.nodeType === 1) {
+      var m = el.matches || el.webkitMatchesSelector || el.msMatchesSelector;
+      if (m && m.call(el, sel)) return el;
+      el = el.parentNode;
+    }
+    return null;
+  }
+
+  document.addEventListener('click', function (e) {
+    var el = closest(e.target, '[data-act]');
+    if (!el) return;
+    var act = el.getAttribute('data-act'), id = el.getAttribute('data-id');
+    switch (act) {
+      case 'send': onSend(id); break; // بدون preventDefault: الوسم <a> الحقيقي هو الي يفتح الواتساب
+      case 'copy': {
+        var cl = getLead(id);
+        if (cl) copyText(buildMsg(cl), function (ok) { toast(ok ? 'انتسخت الرسالة ✓' : 'ما قدرت أنسخ — جرّب «فتح الواتساب»'); });
+        break;
+      }
+      case 'edit': toggleForm(id, 'edit', el.getAttribute('data-focus')); break;
+      case 'note': toggleForm(id, 'note'); break;
+      case 'deal-open': toggleForm(id, 'deal'); break;
+      case 'form-close': ui.form[id] = null; refreshCard(id); break;
+      case 'expand': ui.expand[id] = !ui.expand[id]; refreshCard(id); break;
+      case 'del': {
+        var dl = getLead(id);
+        if (dl) mutate(id, function (l) { l.deletedAt = now(); ui.form[id] = null; }, 'انحذف «' + dl.name + '»');
+        break;
+      }
+      case 'ans-warm': mutate(id, answerWarm, 'صار «مهتم» · تذكير بعد يومين'); break;
+      case 'ans-cold': mutate(id, answerCold, 'صار «رد ورفض» · نرجع له بعد ٤٥ يوم'); break;
+      case 'ans-none': mutate(id, answerNone, function (l) {
+        return 'التذكير تأجل ' + daysWord(S().followDays) + ' · متابعة رقم ' + arDigits(l.followUps);
+      }); break;
+      case 'lost': mutate(id, toLost, 'انقفل نهائيًا'); break;
+      case 'to-new': mutate(id, toNew, 'رجع للقائمة كجديد'); break;
+      case 'snooze': mutate(id, function (l) {
+        return snooze(l, el.getAttribute('data-rid'), +el.getAttribute('data-days'));
+      }, function (l, d) { return d ? 'تأجل إلى ' + fmtDay(d) : 'تأجل'; }); break;
+      case 'rem-done': mutate(id, function (l) { remDone(l, el.getAttribute('data-rid')); }, 'تم ✓'); break;
+      case 'goto': gotoCard(id); break;
+      case 'filter': {
+        var fv = el.getAttribute('data-f');
+        ui.filter = ui.filter === fv && fv !== 'all' ? 'all' : fv;
+        renderAll();
+        break;
+      }
+      case 'clear-filter': ui.filter = 'all'; ui.q = ''; $('q').value = ''; renderAll(); break;
+      case 'paste-add': pasteAdd(); break;
+      case 'top': scrollToY(0); break;
+      case 'go-rem':
+        if ($('rem').hidden) toast('ما عندك تذكيرات هالأسبوع ✓');
+        else scrollToEl($('rem'));
+        break;
+      case 'open-add': {
+        var fold = $('addFold');
+        fold.open = true;
+        scrollToEl(fold);
+        setTimeout(function () { try { fold.querySelector('input[name="name"]').focus(); } catch (e2) { /* تجاهل */ } }, 350);
+        break;
+      }
+      case 'toggle-settings': toggleSettings(); break;
+      case 'reset-template': $('setForm').elements['template'].value = DEFAULT_TEMPLATE; saveSettings($('setForm')); break;
+      case 'notif': requestNotif(); break;
+      case 'export': doExport(); break;
+      case 'import-text': importJSON($('importText').value); break;
+    }
+  });
+
+  $('toastAct').addEventListener('click', function () {
+    var fn = toastFn;
+    hideToast();
+    if (fn) fn();
+  });
+
+  document.addEventListener('submit', function (e) {
+    var f = e.target, kind = f.getAttribute('data-form'), id = f.getAttribute('data-id');
+    if (!kind) return;
+    e.preventDefault();
+    if (kind === 'edit') saveEdit(id, f);
+    else if (kind === 'note') saveNote(id, f);
+    else if (kind === 'deal') saveDeal(id, f);
+    else if (kind === 'add') addFromForm(f);
+    else if (kind === 'settings') saveSettings(f);
+  });
+
+  var qTimer = 0;
+  function onInput(e) {
+    var t = e.target;
+    if (t.id === 'q') {
+      clearTimeout(qTimer);
+      qTimer = setTimeout(function () { ui.q = t.value; renderList(); }, 150);
+      return;
+    }
+    var f = t.form;
+    if (f && f.getAttribute('data-form') === 'deal') {
+      var p = f.querySelector('[data-sum]');
+      if (p) p.innerHTML = dealSummary(val(f, 'monthly'), val(f, 'months'), val(f, 'start'));
+    }
+  }
+  document.addEventListener('input', onInput);
+  document.addEventListener('change', function (e) {
+    onInput(e);
+    var f = e.target.form;
+    if (f && f.id === 'setForm') saveSettings(f, e.target.name === 'template');
+  });
+  // نتذكر فتح/قفل «سجل النشاط» ومجموعات التذكيرات بعد إعادة الرسم
+  document.addEventListener('toggle', function (e) {
+    var d = e.target;
+    if (!d || d.tagName !== 'DETAILS') return;
+    var lid = d.getAttribute('data-log'), rg = d.getAttribute('data-rg');
+    if (lid !== null) ui.logOpen[lid] = d.open;
+    if (rg) ui.remOpen[rg] = d.open;
+  }, true);
+
+  $('sort').addEventListener('change', function () {
+    ui.sort = this.value;
+    S().sort = ui.sort;
+    save();
+    renderList();
+  });
+  $('importFile').addEventListener('change', function () {
+    var file = this.files && this.files[0], input = this;
+    if (!file) return;
+    var rd = new FileReader();
+    rd.onload = function () { importJSON(str(rd.result)); input.value = ''; };
+    rd.onerror = function () { toast('ما قدرت أقرأ الملف'); input.value = ''; };
+    rd.readAsText(file);
+  });
+
+  // لو الصفحة ظلت مفتوحة ودخل يوم جديد: نحدّث التذكيرات
+  var lastDay = '';
+  function checkDay() {
+    if (today() === lastDay) return;
+    lastDay = today();
+    renderAll();
+  }
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) checkDay(); });
+  window.addEventListener('focus', checkDay);
+  var rzTimer = 0;
+  window.addEventListener('resize', function () { clearTimeout(rzTimer); rzTimer = setTimeout(function () { fixMore($('list')); }, 250); });
+
+  /* ============ التشغيل ============ */
+  var info = load();
+  lastDay = today();
+  ui.sort = { score: 1, remind: 1, recent: 1, value: 1 }[S().sort] ? S().sort : 'score';
+  $('sort').value = ui.sort;
+  $('storeWarn').hidden = storageOK;
+  refreshSectors();
+  fillSettings();
+  notifyDue(renderTop());
+  renderList();
+  if (info.note) toast(info.note, null, null, 6000);
+  else if (!info.first && info.added) toast('انضاف ' + arDigits(info.added) + ' عميل جديد من القائمة الأصلية');
+  setInterval(checkDay, 60000);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fixMore($('list')); });
+
+  // Service Worker بمسار نسبي عشان يشتغل تحت مسار المشروع في GitHub Pages
+  try {
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+      window.addEventListener('load', function () {
+        try { navigator.serviceWorker.register('sw.js').then(null, function () { /* بدون نت أول مرة — عادي */ }); } catch (e) { /* تجاهل */ }
+      });
+    }
+  } catch (e) { /* تجاهل */ }
+})();
+</script>
+</body>
+</html>
