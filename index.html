@@ -629,6 +629,16 @@ mark.var{background:var(--brand-soft);color:var(--brand);font-weight:700;padding
       <p class="hint">التنبيه يطلع لك لما تفتح التطبيق وفيه متابعات مستحقة أو موعد قريب. ما يوصلك شي والجوال مقفل — GitHub Pages ما فيه سيرفر يرسل تنبيهات. عشان كذا استخدم زر <b>«للتقويم»</b> في كل موعد، وتقويم جوالك ينبهك حتى وأنت مقفل.</p>
     </section>
 
+    <section class="panelbox panel" id="progPanel">
+      <h3>🔄 نقل شغلك بين المتصفح والتطبيق</h3>
+      <p class="hint">التطبيق المثبّت والمتصفح كل واحد له ذاكرة مستقلة (خصوصًا في الآيفون). عشان تنقل شغلك: انسخ الكود من المكان الي فيه شغلك، والصقه في المكان الثاني.</p>
+      <p class="hint" id="progState"></p>
+      <button class="btn btn-primary btn-block" type="button" data-act="prog-copy" style="margin-top:8px">📋 نسخ كود التقدم</button>
+      <label class="field" style="margin-top:10px"><span>الصق كود التقدم هنا</span><textarea id="progText" name="progText" rows="3" dir="ltr" placeholder='{"p":1,...'></textarea></label>
+      <button class="btn btn-block" type="button" data-act="prog-merge">دمج التقدم مع الموجود</button>
+      <p class="hint">الدمج يحدّث بس العملاء الي داخل الكود (ياخذون شغل الجهة الثانية)، وباقي العملاء ما يتغيرون. ولو ما عجبك في زر «تراجع» بعد الدمج.</p>
+    </section>
+
     <section class="panelbox panel">
       <h3>نسخة احتياطية</h3>
       <p class="hint" id="backupState"></p>
@@ -2541,7 +2551,8 @@ var SEED = [
     if (IS_IOS) {
       return '<ol class="steps"><li>افتح الرابط من <b>سفاري</b> (مو من داخل واتساب أو انستقرام)</li>' +
         '<li>اضغط زر المشاركة <span class="kbd">' + ic('share') + '</span> تحت</li>' +
-        '<li>اختر <b>«إضافة إلى الشاشة الرئيسية»</b> ثم <b>«إضافة»</b></li></ol>';
+        '<li>اختر <b>«إضافة إلى الشاشة الرئيسية»</b> ثم <b>«إضافة»</b></li></ol>' +
+        '<p class="warn">⚠️ في الآيفون التطبيق المثبّت له ذاكرة منفصلة عن سفاري. قبل ما تثبّته: الإعدادات ← <b>«نسخ كود التقدم»</b>، وبعد ما تفتح التطبيق الصقه فيه.</p>';
     }
     if (IS_ANDROID) {
       return '<ol class="steps"><li>افتح الرابط من <b>كروم</b></li>' +
@@ -2552,10 +2563,105 @@ var SEED = [
   }
   function renderInstall() {
     var box = $('installBox'), set = $('installSet'), show = !isStandalone() && !S().installHidden && (IS_IOS || IS_ANDROID || deferredInstall);
-    box.hidden = !show;
-    box.innerHTML = show ? '<div class="install"><div class="install-t"><b>📲 ثبّت التطبيق على جوالك</b>' +
-      '<button type="button" class="lk-clear" data-act="install-hide" aria-label="إخفاء">' + ic('x') + '</button></div>' + installSteps() + '</div>' : '';
+    var html = transferHint() + (show ? '<div class="install"><div class="install-t"><b>📲 ثبّت التطبيق على جوالك</b>' +
+      '<button type="button" class="lk-clear" data-act="install-hide" aria-label="إخفاء">' + ic('x') + '</button></div>' + installSteps() + '</div>' : '');
+    box.hidden = !html;
+    box.innerHTML = html;
     set.innerHTML = isStandalone() ? '<p class="hint">✓ التطبيق مثبّت وتستخدمه الحين من الشاشة الرئيسية.</p>' : installSteps();
+  }
+
+  /* ============ نقل التقدم بين المتصفح والتطبيق ============
+     التطبيق المثبّت (خصوصًا في الآيفون) له ذاكرة منفصلة عن المتصفح.
+     «كود التقدم» ينسخ بس الشغل الي سويته (المراحل والمواعيد والعروض والملاحظات)
+     بدون بيانات العملاء الثابتة، عشان يكون صغير وسهل تلصقه في الجهة الثانية. */
+  var PROG_KEYS = ['stage', 'sentAt', 'followUps', 'reminders', 'appts', 'proposal', 'contract', 'log', 'customMsg', 'deletedAt', 'createdAt', 'updatedAt'];
+  var EDIT_KEYS = ['name', 'phone', 'sector', 'url', 'expected', 'months', 'pri', 'gap', 'need', 'offer'];
+  var SET_KEYS = ['goal', 'dailyTarget', 'followDays', 'checkinDays', 'waMode', 'sort', 'templates'];
+
+  function seedMap() {
+    var m = {};
+    (typeof SEED !== 'undefined' && isArr(SEED) ? SEED : []).forEach(function (s) { if (s && s.id != null) m[String(s.id)] = normLead(s); });
+    return m;
+  }
+  function isEmptyVal(v) {
+    return v === '' || v === 0 || v === null || v === undefined || (isArr(v) && !v.length);
+  }
+  function progressCode() {
+    var sm = seedMap(), out = { p: 1, at: now(), settings: {}, leads: [] }, s = S();
+    SET_KEYS.forEach(function (k) { out.settings[k] = s[k]; });
+    data.leads.forEach(function (l) {
+      var seed = sm[l.id];
+      if (!seed) { out.leads.push(l); return; } // عميل أضفته بنفسك: ننقله كامل
+      var row = { id: l.id }, touched = false;
+      PROG_KEYS.forEach(function (k) {
+        if (k === 'stage' && l.stage === 'new') return;
+        if (isEmptyVal(l[k])) return;
+        row[k] = l[k];
+        if (k !== 'createdAt' && k !== 'updatedAt') touched = true;
+      });
+      EDIT_KEYS.forEach(function (k) {
+        if (str(l[k]) !== str(seed[k])) { row[k] = l[k]; touched = true; }
+      });
+      if (touched) out.leads.push(row);
+    });
+    return JSON.stringify(out);
+  }
+  function progressStats() {
+    var code = progressCode(), n = 0;
+    try { n = JSON.parse(code).leads.length; } catch (e) { /* تجاهل */ }
+    return { code: code, leads: n, kb: Math.max(1, Math.round(code.length / 1024)) };
+  }
+  // الدمج ما يمسح شي: يحدّث العملاء الي فيهم شغل، ويضيف الجداد
+  function mergeProgress(text) {
+    var p;
+    try { p = JSON.parse(trim(text)); } catch (e) { return toast('الكود مو صحيح — تأكد إنك نسخته كامل من أوله لآخره'); }
+    if (!p || !isArr(p.leads)) return toast('ما لقيت تقدم في هذا الكود');
+    if (!p.leads.length) return toast('الكود فاضي — ما فيه شغل محفوظ في الجهة الثانية');
+    var prev = clone(data), upd = 0, added = 0;
+    p.leads.forEach(function (row) {
+      if (!row || row.id == null) return;
+      var l = getLead(String(row.id)), k;
+      if (l) {
+        var merged = {};
+        for (k in l) if (has(l, k)) merged[k] = l[k];
+        for (k in row) if (has(row, k)) merged[k] = row[k];
+        data.leads[data.leads.indexOf(l)] = normLead(merged);
+        upd++;
+      } else {
+        data.leads.push(normLead(row));
+        added++;
+      }
+    });
+    if (p.settings && typeof p.settings === 'object') {
+      var ns = {}, k2;
+      for (k2 in S()) if (has(S(), k2)) ns[k2] = S()[k2];
+      SET_KEYS.forEach(function (k3) { if (has(p.settings, k3) && p.settings[k3] != null) ns[k3] = p.settings[k3]; });
+      data.settings = normSettings(ns);
+    }
+    save();
+    ui.sort = S().sort; $('sort').value = ui.sort;
+    fillSettings();
+    refreshSectors();
+    renderAll();
+    $('progText').value = '';
+    toast('تم نقل التقدم ✓ ' + arDigits(upd) + ' عميل' + (added ? ' + ' + arDigits(added) + ' جديد' : ''), 'تراجع', function () {
+      data = prev; save(); fillSettings(); refreshSectors(); renderAll();
+      toast('رجعت البيانات الي قبل النقل');
+    });
+  }
+  function renderProgress() {
+    var st = progressStats();
+    $('progState').textContent = st.leads
+      ? 'عندك شغل على ' + arDigits(st.leads) + ' عميل في هذا المكان (حجم الكود ' + arDigits(st.kb) + ' كيلوبايت).'
+      : 'ما فيه شغل محفوظ هنا لسه — كل العملاء في مرحلة «جديد».';
+  }
+  // لو التطبيق مثبّت وذاكرته فاضية: نذكّره إن شغله ممكن يكون في المتصفح
+  function transferHint() {
+    var st = progressStats();
+    if (!isStandalone() || st.leads > 0) return '';
+    return '<div class="install warn-install"><div class="install-t"><b>⚠️ التطبيق بدأ بذاكرة جديدة</b></div>' +
+      '<p>لو كنت تشتغل على الرابط من المتصفح قبل، شغلك محفوظ هناك مو هنا. افتح الرابط من نفس المتصفح ← الإعدادات ← <b>«نسخ كود التقدم»</b>، وارجع هنا والصقه في الإعدادات.</p>' +
+      '<a class="btn btn-primary" href="#settings">افتح الإعدادات</a></div>';
   }
 
   /* ============ Toast بدل alert ============ */
@@ -2923,6 +3029,7 @@ var SEED = [
     $('waDevice').textContent = deviceHint();
     notifHint();
     backupHint();
+    renderProgress();
   }
   function saveSettings(f, quiet) {
     var s = S();
@@ -3178,6 +3285,20 @@ var SEED = [
         break;
       case 'install-hide': S().installHidden = true; save(); renderInstall(); toast('خفيته — تلقاه في الإعدادات'); break;
       case 'notif': requestNotif(); break;
+      case 'prog-copy': {
+        var st = progressStats();
+        if (!st.leads) { toast('ما فيه شغل محفوظ هنا — الكود بينسخ فاضي'); }
+        copyText(st.code, function (ok) {
+          if (ok) toast('انتسخ كود التقدم ✓ (' + arDigits(st.leads) + ' عميل) — الصقه في الجهة الثانية', null, null, 6000);
+          else {
+            $('progText').value = st.code;
+            $('progText').select();
+            toast('ما قدرت أنسخ — الكود مكتوب تحت، انسخه يدويًا', null, null, 7000);
+          }
+        });
+        break;
+      }
+      case 'prog-merge': mergeProgress($('progText').value); break;
       case 'export': doExport(); break;
       case 'import-text': importJSON($('importText').value); break;
     }
