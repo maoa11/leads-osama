@@ -1,7 +1,7 @@
 /* sw.js — Service Worker بسيط: يحفظ نسخة من الصفحة عشان تفتح بدون نت.
    بياناتك مو هنا — بياناتك في localStorage داخل المتصفح. */
-var CACHE = 'osama-crm-v1';
-var FILES = ['./', 'index.html', 'manifest.webmanifest'];
+var CACHE = 'osama-crm-v2';
+var FILES = ['./', 'index.html', 'manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(
